@@ -1,0 +1,88 @@
+All about Kubernetes Notes:
+=========================================
+https://kubernetes.io/docs/setup/learning-environment/minikube/
+
+
+paramanata@paramanata-OptiPlex-3020:~$ kubectl run -i --tty day1 --image=paramanandapati/go-day1 -- sh
+kubectl run --generator=deployment/apps.v1 is DEPRECATED and will be removed in a future version. Use kubectl run --generator=run-pod/v1 or kubectl create instead.
+If you don't see a command prompt, try pressing enter.
+
+# ls
+bin  boot  day1  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+# ./dday1
+sh: 3: ./dday1: not found
+# ^[[A^[[B\
+> q
+sh: 5: q: not found
+# ^C
+# ./day1
+Hello Paramananda
+Enter to Quit.  1: Fibonacci . 2: Reverse an Integer, 3: Palindrome, 4: Star/number Pyramid 
+4
+Enter to Quit. Enter a number of rows of Pyramid
+4
+Star Pyramid
+*  
+*  *  
+*  *  *  
+*  *  *  *  
+*  *  *  *  *  
+Number Pyramid 1
+1  
+1  2  
+1  2  3  
+1  2  3  4  
+Number Pyramid 2 
+1  
+2  3  
+4  5  6  
+7  8  9  10  
+# exit
+Session ended, resume using 'kubectl attach day1-b9688f668-6t564 -c day1 -i -t' command when the pod is running
+paramanata@paramanata-OptiPlex-3020:~$ 
+
+
+OR
+
+
+aramanata@paramanata-OptiPlex-3020:~$ kubectl apply -f test_k8s_day1.yaml
+pod/day1 created
+paramanata@paramanata-OptiPlex-3020:~$ kubectl exec -it day1 -- /bin/bash
+root@day1:/# ls
+bin   day1  etc   lib    media  opt   root  sbin  sys  usr
+boot  dev   home  lib64  mnt    proc  run   srv   tmp  var
+root@day1:/# ./day1 
+Hello Paramananda
+Enter to Quit.  1: Fibonacci . 2: Reverse an Integer, 3: Palindrome, 4: Star/number Pyramid 
+4
+Enter to Quit. Enter a number of rows of Pyramid
+4
+Star Pyramid
+*  
+*  *  
+*  *  *  
+*  *  *  *  
+*  *  *  *  *  
+Number Pyramid 1
+1  
+1  2  
+1  2  3  
+1  2  3  4  
+Number Pyramid 2 
+1  
+2  3  
+4  5  6  
+7  8  9  10  
+root@day1:/# ./day1 
+Hello Paramananda
+Enter to Quit.  1: Fibonacci . 2: Reverse an Integer, 3: Palindrome, 4: Star/number Pyramid 
+2
+Enter the Number want to Reverse: 
+4242424
+After Reverse:  4242424
+root@day1:/# exit
+exit
+paramanata@paramanata-OptiPlex-3020:~$ 
+
+
+

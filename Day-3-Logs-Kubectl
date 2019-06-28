@@ -1,0 +1,948 @@
+paramanata@paramanata-OptiPlex-3020:~$ 
+paramanata@paramanata-OptiPlex-3020:~$ kubectl apply -f ns-demo.yaml --v=8
+I0628 10:19:55.618249   11046 loader.go:359] Config loaded from file:  /home/paramanata/.kube/config
+I0628 10:19:55.619053   11046 round_trippers.go:416] GET https://192.168.99.100:8443/openapi/v2?timeout=32s
+I0628 10:19:55.619063   11046 round_trippers.go:423] Request Headers:
+I0628 10:19:55.619070   11046 round_trippers.go:426]     Accept: application/com.github.proto-openapi.spec.v2@v1.0+protobuf
+I0628 10:19:55.619077   11046 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:19:55.633366   11046 round_trippers.go:441] Response Status: 200 OK in 14 milliseconds
+I0628 10:19:55.633387   11046 round_trippers.go:444] Response Headers:
+I0628 10:19:55.633393   11046 round_trippers.go:447]     Last-Modified: Thu, 20 Jun 2019 06:06:48 GMT
+I0628 10:19:55.633399   11046 round_trippers.go:447]     Vary: Accept-Encoding
+I0628 10:19:55.633405   11046 round_trippers.go:447]     Vary: Accept
+I0628 10:19:55.633411   11046 round_trippers.go:447]     Accept-Ranges: bytes
+I0628 10:19:55.633418   11046 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:49:55 GMT
+I0628 10:19:55.633423   11046 round_trippers.go:447]     Etag: "1D5713438F421F596E1A4E508FD3D2D469AA6C89D51E52228FD9DE246633C8A4A054457EF762EDE1BC57503EBCE1029915303BAFE856EC60CCA3A6E4A33EC9A9"
+I0628 10:19:55.633436   11046 round_trippers.go:447]     X-Varied-Accept: application/com.github.proto-openapi.spec.v2@v1.0+protobuf
+I0628 10:19:55.633442   11046 round_trippers.go:447]     Content-Type: application/octet-stream
+I0628 10:19:55.633449   11046 round_trippers.go:447]     X-From-Cache: 1
+I0628 10:19:55.794148   11046 request.go:945] Response Body:
+00000000  0a 03 32 2e 30 12 15 0a  0a 4b 75 62 65 72 6e 65  |..2.0....Kuberne|
+00000010  74 65 73 12 07 76 31 2e  31 30 2e 30 42 a2 a5 66  |tes..v1.10.0B..f|
+00000020  12 ca 02 0a 05 2f 61 70  69 2f 12 c0 02 12 bd 02  |...../api/......|
+00000030  0a 04 63 6f 72 65 1a 1a  67 65 74 20 61 76 61 69  |..core..get avai|
+00000040  6c 61 62 6c 65 20 41 50  49 20 76 65 72 73 69 6f  |lable API versio|
+00000050  6e 73 2a 12 67 65 74 43  6f 72 65 41 50 49 56 65  |ns*.getCoreAPIVe|
+00000060  72 73 69 6f 6e 73 32 10  61 70 70 6c 69 63 61 74  |rsions2.applicat|
+00000070  69 6f 6e 2f 6a 73 6f 6e  32 10 61 70 70 6c 69 63  |ion/json2.applic|
+00000080  61 74 69 6f 6e 2f 79 61  6d 6c 32 23 61 70 70 6c  |ation/yaml2#appl|
+00000090  69 63 61 74 69 6f 6e 2f  76 6e 64 2e 6b 75 62 65  |ication/vnd.kube|
+000000a0  72 6e 65 74 65 73 2e 70  72 6f 74 6f 62 75 66 3a  |rnetes.protobuf:|
+000000b0  10 61 70 70 6c 69 63 61  74 69 6f 6e 2f 6a 73 6f  |.application/jso|
+000000c0  6e 3a 10 61 70 70 6c 69  63 61 74 69 6f 6e 2f 79  |n:.application/ [truncated 11209233 chars]
+I0628 10:19:55.893642   11046 round_trippers.go:416] GET https://192.168.99.100:8443/api/v1/namespaces/demo
+I0628 10:19:55.893656   11046 round_trippers.go:423] Request Headers:
+I0628 10:19:55.893661   11046 round_trippers.go:426]     Accept: application/json
+I0628 10:19:55.893665   11046 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:19:55.895723   11046 round_trippers.go:441] Response Status: 200 OK in 2 milliseconds
+I0628 10:19:55.895750   11046 round_trippers.go:444] Response Headers:
+I0628 10:19:55.895759   11046 round_trippers.go:447]     Content-Length: 283
+I0628 10:19:55.895774   11046 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:49:55 GMT
+I0628 10:19:55.895782   11046 round_trippers.go:447]     Content-Type: application/json
+I0628 10:19:55.895860   11046 request.go:947] Response Body: {"kind":"Namespace","apiVersion":"v1","metadata":{"name":"demo","selfLink":"/api/v1/namespaces/demo","uid":"9fd0ae7c-9958-11e9-90cb-0800275cd445","resourceVersion":"692555","creationTimestamp":"2019-06-28T03:55:52Z"},"spec":{"finalizers":["kubernetes"]},"status":{"phase":"Active"}}
+Warning: kubectl apply should be used on resource created by either kubectl create --save-config or kubectl apply
+I0628 10:19:55.896017   11046 request.go:947] Request Body: {"metadata":{"annotations":{"kubectl.kubernetes.io/last-applied-configuration":"{\"apiVersion\":\"v1\",\"kind\":\"Namespace\",\"metadata\":{\"annotations\":{},\"labels\":{\"app\":\"mydemo\"},\"name\":\"demo\"}}\n"},"labels":{"app":"mydemo"}}}
+I0628 10:19:55.896046   11046 round_trippers.go:416] PATCH https://192.168.99.100:8443/api/v1/namespaces/demo
+I0628 10:19:55.896052   11046 round_trippers.go:423] Request Headers:
+I0628 10:19:55.896057   11046 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:19:55.896061   11046 round_trippers.go:426]     Accept: application/json
+I0628 10:19:55.896066   11046 round_trippers.go:426]     Content-Type: application/strategic-merge-patch+json
+I0628 10:19:55.898751   11046 round_trippers.go:441] Response Status: 200 OK in 2 milliseconds
+I0628 10:19:55.898765   11046 round_trippers.go:444] Response Headers:
+I0628 10:19:55.898772   11046 round_trippers.go:447]     Content-Length: 511
+I0628 10:19:55.898778   11046 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:49:55 GMT
+I0628 10:19:55.898783   11046 round_trippers.go:447]     Content-Type: application/json
+I0628 10:19:55.898806   11046 request.go:947] Response Body: {"kind":"Namespace","apiVersion":"v1","metadata":{"name":"demo","selfLink":"/api/v1/namespaces/demo","uid":"9fd0ae7c-9958-11e9-90cb-0800275cd445","resourceVersion":"696444","creationTimestamp":"2019-06-28T03:55:52Z","labels":{"app":"mydemo"},"annotations":{"kubectl.kubernetes.io/last-applied-configuration":"{\"apiVersion\":\"v1\",\"kind\":\"Namespace\",\"metadata\":{\"annotations\":{},\"labels\":{\"app\":\"mydemo\"},\"name\":\"demo\"}}\n"}},"spec":{"finalizers":["kubernetes"]},"status":{"phase":"Active"}}
+namespace/demo configured
+paramanata@paramanata-OptiPlex-3020:~$ 
+
+paramanata@paramanata-OptiPlex-3020:~$ kubectl get node
+NAME       STATUS   ROLES    AGE   VERSION
+minikube   Ready    master   8d    v1.10.0
+paramanata@paramanata-OptiPlex-3020:~$ kubectl get pod
+NAME                                   READY   STATUS             RESTARTS   AGE
+day                                    0/1     Completed          1966       7d
+day1                                   1/1     Running            1476       8d
+day1-b9688f668-6t564                   1/1     Running            4          8d
+day3                                   0/1     CrashLoopBackOff   8          20m
+go-day1-5688665dff-j74sj               0/1     CrashLoopBackOff   1974       8d
+hello-minikube-7c77b68cff-hc8l2        1/1     Running            3          8d
+kubernetes-bootcamp-5c69669756-qkw2q   1/1     Running            1          54m
+test                                   1/1     Running            3          8d
+paramanata@paramanata-OptiPlex-3020:~$ kubectl get ns
+NAME          STATUS   AGE
+default       Active   8d
+demo          Active   31m
+kube-public   Active   8d
+kube-system   Active   8d
+paramanata@paramanata-OptiPlex-3020:~$ 
+
+
+paramanata@paramanata-OptiPlex-3020:~$ kubectl apply -f nginx-dep.yaml --v=8
+I0628 09:58:37.242513    9262 loader.go:359] Config loaded from file:  /home/paramanata/.kube/config
+I0628 09:58:37.243443    9262 round_trippers.go:416] GET https://192.168.99.100:8443/openapi/v2?timeout=32s
+I0628 09:58:37.243456    9262 round_trippers.go:423] Request Headers:
+I0628 09:58:37.243463    9262 round_trippers.go:426]     Accept: application/com.github.proto-openapi.spec.v2@v1.0+protobuf
+I0628 09:58:37.243470    9262 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 09:58:37.257551    9262 round_trippers.go:441] Response Status: 200 OK in 14 milliseconds
+I0628 09:58:37.257567    9262 round_trippers.go:444] Response Headers:
+I0628 09:58:37.257573    9262 round_trippers.go:447]     X-From-Cache: 1
+I0628 09:58:37.257577    9262 round_trippers.go:447]     Accept-Ranges: bytes
+I0628 09:58:37.257582    9262 round_trippers.go:447]     Content-Type: application/octet-stream
+I0628 09:58:37.257588    9262 round_trippers.go:447]     Etag: "1D5713438F421F596E1A4E508FD3D2D469AA6C89D51E52228FD9DE246633C8A4A054457EF762EDE1BC57503EBCE1029915303BAFE856EC60CCA3A6E4A33EC9A9"
+I0628 09:58:37.257597    9262 round_trippers.go:447]     Last-Modified: Thu, 20 Jun 2019 06:06:48 GMT
+I0628 09:58:37.257602    9262 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:28:37 GMT
+I0628 09:58:37.257608    9262 round_trippers.go:447]     Vary: Accept-Encoding
+I0628 09:58:37.257613    9262 round_trippers.go:447]     Vary: Accept
+I0628 09:58:37.257619    9262 round_trippers.go:447]     X-Varied-Accept: application/com.github.proto-openapi.spec.v2@v1.0+protobuf
+I0628 09:58:37.391877    9262 request.go:945] Response Body:
+00000000  0a 03 32 2e 30 12 15 0a  0a 4b 75 62 65 72 6e 65  |..2.0....Kuberne|
+00000010  74 65 73 12 07 76 31 2e  31 30 2e 30 42 a2 a5 66  |tes..v1.10.0B..f|
+00000020  12 ca 02 0a 05 2f 61 70  69 2f 12 c0 02 12 bd 02  |...../api/......|
+00000030  0a 04 63 6f 72 65 1a 1a  67 65 74 20 61 76 61 69  |..core..get avai|
+00000040  6c 61 62 6c 65 20 41 50  49 20 76 65 72 73 69 6f  |lable API versio|
+00000050  6e 73 2a 12 67 65 74 43  6f 72 65 41 50 49 56 65  |ns*.getCoreAPIVe|
+00000060  72 73 69 6f 6e 73 32 10  61 70 70 6c 69 63 61 74  |rsions2.applicat|
+00000070  69 6f 6e 2f 6a 73 6f 6e  32 10 61 70 70 6c 69 63  |ion/json2.applic|
+00000080  61 74 69 6f 6e 2f 79 61  6d 6c 32 23 61 70 70 6c  |ation/yaml2#appl|
+00000090  69 63 61 74 69 6f 6e 2f  76 6e 64 2e 6b 75 62 65  |ication/vnd.kube|
+000000a0  72 6e 65 74 65 73 2e 70  72 6f 74 6f 62 75 66 3a  |rnetes.protobuf:|
+000000b0  10 61 70 70 6c 69 63 61  74 69 6f 6e 2f 6a 73 6f  |.application/jso|
+000000c0  6e 3a 10 61 70 70 6c 69  63 61 74 69 6f 6e 2f 79  |n:.application/ [truncated 11209233 chars]
+I0628 09:58:37.480754    9262 round_trippers.go:416] GET https://192.168.99.100:8443/api?timeout=32s
+I0628 09:58:37.480771    9262 round_trippers.go:423] Request Headers:
+I0628 09:58:37.480779    9262 round_trippers.go:426]     Accept: application/json, */*
+I0628 09:58:37.480785    9262 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 09:58:37.481917    9262 round_trippers.go:441] Response Status: 200 OK in 1 milliseconds
+I0628 09:58:37.481932    9262 round_trippers.go:444] Response Headers:
+I0628 09:58:37.481939    9262 round_trippers.go:447]     Content-Type: application/json
+I0628 09:58:37.481947    9262 round_trippers.go:447]     Content-Length: 137
+I0628 09:58:37.481954    9262 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:28:37 GMT
+I0628 09:58:37.520068    9262 request.go:947] Response Body: {"kind":"APIVersions","versions":["v1"],"serverAddressByClientCIDRs":[{"clientCIDR":"0.0.0.0/0","serverAddress":"192.168.99.100:8443"}]}
+I0628 09:58:37.562140    9262 round_trippers.go:416] GET https://192.168.99.100:8443/apis?timeout=32s
+I0628 09:58:37.562154    9262 round_trippers.go:423] Request Headers:
+I0628 09:58:37.562160    9262 round_trippers.go:426]     Accept: application/json, */*
+I0628 09:58:37.562165    9262 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 09:58:37.563243    9262 round_trippers.go:441] Response Status: 200 OK in 1 milliseconds
+I0628 09:58:37.563257    9262 round_trippers.go:444] Response Headers:
+I0628 09:58:37.563263    9262 round_trippers.go:447]     Content-Type: application/json
+I0628 09:58:37.563269    9262 round_trippers.go:447]     Content-Length: 3746
+I0628 09:58:37.563274    9262 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:28:37 GMT
+I0628 09:58:37.613624    9262 request.go:947] Response Body: {"kind":"APIGroupList","apiVersion":"v1","groups":[{"name":"apiregistration.k8s.io","versions":[{"groupVersion":"apiregistration.k8s.io/v1","version":"v1"},{"groupVersion":"apiregistration.k8s.io/v1beta1","version":"v1beta1"}],"preferredVersion":{"groupVersion":"apiregistration.k8s.io/v1","version":"v1"},"serverAddressByClientCIDRs":null},{"name":"extensions","versions":[{"groupVersion":"extensions/v1beta1","version":"v1beta1"}],"preferredVersion":{"groupVersion":"extensions/v1beta1","version":"v1beta1"},"serverAddressByClientCIDRs":null},{"name":"apps","versions":[{"groupVersion":"apps/v1","version":"v1"},{"groupVersion":"apps/v1beta2","version":"v1beta2"},{"groupVersion":"apps/v1beta1","version":"v1beta1"}],"preferredVersion":{"groupVersion":"apps/v1","version":"v1"},"serverAddressByClientCIDRs":null},{"name":"events.k8s.io","versions":[{"groupVersion":"events.k8s.io/v1beta1","version":"v1beta1"}],"preferredVersion":{"groupVersion":"events.k8s.io/v1beta1","version":"v1beta1"},"serverAddressByClientCIDRs":nu [truncated 2722 chars]
+I0628 09:58:37.614194    9262 round_trippers.go:416] GET https://192.168.99.100:8443/apis/apiextensions.k8s.io/v1beta1?timeout=32s
+I0628 09:58:37.614208    9262 round_trippers.go:423] Request Headers:
+I0628 09:58:37.614194    9262 round_trippers.go:416] GET https://192.168.99.100:8443/apis/apps/v1beta1?timeout=32s
+I0628 09:58:37.614224    9262 round_trippers.go:423] Request Headers:
+I0628 09:58:37.614232    9262 round_trippers.go:426]     Accept: application/json, */*
+I0628 09:58:37.614240    9262 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 09:58:37.614282    9262 round_trippers.go:416] GET https://192.168.99.100:8443/apis/certificates.k8s.io/v1beta1?timeout=32s
+I0628 09:58:37.614284    9262 round_trippers.go:416] GET https://192.168.99.100:8443/apis/events.k8s.io/v1beta1?timeout=32s
+I0628 09:58:37.614300    9262 round_trippers.go:423] Request Headers:
+I0628 09:58:37.614306    9262 round_trippers.go:416] GET https://192.168.99.100:8443/apis/rbac.authorization.k8s.io/v1beta1?timeout=32s
+I0628 09:58:37.614320    9262 round_trippers.go:423] Request Headers:
+I0628 09:58:37.614331    9262 round_trippers.go:426]     Accept: application/json, */*
+I0628 09:58:37.614341    9262 round_trippers.go:416] GET https://192.168.99.100:8443/apis/storage.k8s.io/v1?timeout=32s
+I0628 09:58:37.614350    9262 round_trippers.go:423] Request Headers:
+I0628 09:58:37.614357    9262 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 09:58:37.614366    9262 round_trippers.go:426]     Accept: application/json, */*
+I0628 09:58:37.614370    9262 round_trippers.go:416] GET https://192.168.99.100:8443/apis/authentication.k8s.io/v1?timeout=32s
+I0628 09:58:37.614380    9262 round_trippers.go:423] Request Headers:
+I0628 09:58:37.614387    9262 round_trippers.go:426]     Accept: application/json, */*
+I0628 09:58:37.614224    9262 round_trippers.go:416] GET https://192.168.99.100:8443/api/v1?timeout=32s
+I0628 09:58:37.614406    9262 round_trippers.go:423] Request Headers:
+I0628 09:58:37.614415    9262 round_trippers.go:426]     Accept: application/json, */*
+I0628 09:58:37.614423    9262 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 09:58:37.614292    9262 round_trippers.go:423] Request Headers:
+I0628 09:58:37.614449    9262 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 09:58:37.614456    9262 round_trippers.go:416] GET https://192.168.99.100:8443/apis/authentication.k8s.io/v1beta1?timeout=32s
+I0628 09:58:37.614467    9262 round_trippers.go:423] Request Headers:
+I0628 09:58:37.614475    9262 round_trippers.go:426]     Accept: application/json, */*
+I0628 09:58:37.614482    9262 round_trippers.go:416] GET https://192.168.99.100:8443/apis/networking.k8s.io/v1?timeout=32s
+I0628 09:58:37.614495    9262 round_trippers.go:423] Request Headers:
+I0628 09:58:37.614519    9262 round_trippers.go:416] GET https://192.168.99.100:8443/apis/storage.k8s.io/v1beta1?timeout=32s
+I0628 09:58:37.614521    9262 round_trippers.go:426]     Accept: application/json, */*
+I0628 09:58:37.614541    9262 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 09:58:37.614568    9262 round_trippers.go:416] GET https://192.168.99.100:8443/apis/apiregistration.k8s.io/v1?timeout=32s
+I0628 09:58:37.614579    9262 round_trippers.go:423] Request Headers:
+I0628 09:58:37.614586    9262 round_trippers.go:426]     Accept: application/json, */*
+I0628 09:58:37.614587    9262 round_trippers.go:416] GET https://192.168.99.100:8443/apis/admissionregistration.k8s.io/v1beta1?timeout=32s
+I0628 09:58:37.614594    9262 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 09:58:37.614598    9262 round_trippers.go:423] Request Headers:
+I0628 09:58:37.614599    9262 round_trippers.go:416] GET https://192.168.99.100:8443/apis/authorization.k8s.io/v1beta1?timeout=32s
+I0628 09:58:37.614606    9262 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 09:58:37.614611    9262 round_trippers.go:423] Request Headers:
+I0628 09:58:37.614614    9262 round_trippers.go:426]     Accept: application/json, */*
+I0628 09:58:37.614619    9262 round_trippers.go:426]     Accept: application/json, */*
+I0628 09:58:37.614627    9262 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 09:58:37.614398    9262 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 09:58:37.614214    9262 round_trippers.go:416] GET https://192.168.99.100:8443/apis/batch/v1beta1?timeout=32s
+I0628 09:58:37.614694    9262 round_trippers.go:423] Request Headers:
+I0628 09:58:37.614701    9262 round_trippers.go:416] GET https://192.168.99.100:8443/apis/apiregistration.k8s.io/v1beta1?timeout=32s
+I0628 09:58:37.614709    9262 round_trippers.go:423] Request Headers:
+I0628 09:58:37.614720    9262 round_trippers.go:426]     Accept: application/json, */*
+I0628 09:58:37.614728    9262 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 09:58:37.614761    9262 round_trippers.go:416] GET https://192.168.99.100:8443/apis/autoscaling/v1?timeout=32s
+I0628 09:58:37.614458    9262 round_trippers.go:426]     Accept: application/json, */*
+I0628 09:58:37.614773    9262 round_trippers.go:423] Request Headers:
+I0628 09:58:37.614784    9262 round_trippers.go:426]     Accept: application/json, */*
+I0628 09:58:37.614792    9262 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 09:58:37.614482    9262 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 09:58:37.614823    9262 round_trippers.go:416] GET https://192.168.99.100:8443/apis/rbac.authorization.k8s.io/v1?timeout=32s
+I0628 09:58:37.614835    9262 round_trippers.go:423] Request Headers:
+I0628 09:58:37.614843    9262 round_trippers.go:426]     Accept: application/json, */*
+I0628 09:58:37.614850    9262 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 09:58:37.614308    9262 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 09:58:37.614872    9262 round_trippers.go:426]     Accept: application/json, */*
+I0628 09:58:37.614529    9262 round_trippers.go:423] Request Headers:
+I0628 09:58:37.614903    9262 round_trippers.go:416] GET https://192.168.99.100:8443/apis/autoscaling/v2beta1?timeout=32s
+I0628 09:58:37.614908    9262 round_trippers.go:426]     Accept: application/json, */*
+I0628 09:58:37.614916    9262 round_trippers.go:423] Request Headers:
+I0628 09:58:37.614545    9262 round_trippers.go:416] GET https://192.168.99.100:8443/apis/authorization.k8s.io/v1?timeout=32s
+I0628 09:58:37.614926    9262 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 09:58:37.614935    9262 round_trippers.go:426]     Accept: application/json, */*
+I0628 09:58:37.614985    9262 round_trippers.go:416] GET https://192.168.99.100:8443/apis/batch/v1?timeout=32s
+I0628 09:58:37.614996    9262 round_trippers.go:423] Request Headers:
+I0628 09:58:37.615004    9262 round_trippers.go:426]     Accept: application/json, */*
+I0628 09:58:37.615011    9262 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 09:58:37.615048    9262 round_trippers.go:416] GET https://192.168.99.100:8443/apis/apps/v1beta2?timeout=32s
+I0628 09:58:37.614702    9262 round_trippers.go:426]     Accept: application/json, */*
+I0628 09:58:37.615066    9262 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 09:58:37.615074    9262 round_trippers.go:416] GET https://192.168.99.100:8443/apis/extensions/v1beta1?timeout=32s
+I0628 09:58:37.614771    9262 round_trippers.go:416] GET https://192.168.99.100:8443/apis/policy/v1beta1?timeout=32s
+I0628 09:58:37.615087    9262 round_trippers.go:423] Request Headers:
+I0628 09:58:37.615098    9262 round_trippers.go:423] Request Headers:
+I0628 09:58:37.615101    9262 round_trippers.go:426]     Accept: application/json, */*
+I0628 09:58:37.615115    9262 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 09:58:37.614341    9262 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 09:58:37.614919    9262 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 09:58:37.615115    9262 round_trippers.go:416] GET https://192.168.99.100:8443/apis/apps/v1?timeout=32s
+I0628 09:58:37.615254    9262 round_trippers.go:423] Request Headers:
+I0628 09:58:37.614929    9262 round_trippers.go:423] Request Headers:
+I0628 09:58:37.615273    9262 round_trippers.go:426]     Accept: application/json, */*
+I0628 09:58:37.615279    9262 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 09:58:37.615107    9262 round_trippers.go:426]     Accept: application/json, */*
+I0628 09:58:37.615306    9262 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 09:58:37.615059    9262 round_trippers.go:423] Request Headers:
+I0628 09:58:37.615369    9262 round_trippers.go:426]     Accept: application/json, */*
+I0628 09:58:37.615374    9262 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 09:58:37.614216    9262 round_trippers.go:426]     Accept: application/json, */*
+I0628 09:58:37.615446    9262 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 09:58:37.615266    9262 round_trippers.go:426]     Accept: application/json, */*
+I0628 09:58:37.615525    9262 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 09:58:37.616633    9262 round_trippers.go:441] Response Status: 200 OK in 1 milliseconds
+I0628 09:58:37.616693    9262 round_trippers.go:444] Response Headers:
+I0628 09:58:37.616712    9262 round_trippers.go:447]     Content-Type: application/json
+I0628 09:58:37.616732    9262 round_trippers.go:447]     Content-Length: 594
+I0628 09:58:37.616747    9262 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:28:37 GMT
+I0628 09:58:37.616638    9262 round_trippers.go:441] Response Status: 200 OK in 2 milliseconds
+I0628 09:58:37.616765    9262 round_trippers.go:444] Response Headers:
+I0628 09:58:37.616773    9262 round_trippers.go:447]     Content-Type: application/json
+I0628 09:58:37.616780    9262 round_trippers.go:447]     Content-Length: 284
+I0628 09:58:37.616786    9262 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:28:37 GMT
+I0628 09:58:37.616648    9262 round_trippers.go:441] Response Status: 200 OK in 2 milliseconds
+I0628 09:58:37.616804    9262 round_trippers.go:444] Response Headers:
+I0628 09:58:37.616810    9262 round_trippers.go:447]     Content-Type: application/json
+I0628 09:58:37.616817    9262 round_trippers.go:447]     Content-Length: 1338
+I0628 09:58:37.616823    9262 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:28:37 GMT
+I0628 09:58:37.616658    9262 round_trippers.go:441] Response Status: 200 OK in 1 milliseconds
+I0628 09:58:37.616835    9262 round_trippers.go:444] Response Headers:
+I0628 09:58:37.616842    9262 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:28:37 GMT
+I0628 09:58:37.616848    9262 round_trippers.go:447]     Content-Type: application/json
+I0628 09:58:37.616854    9262 round_trippers.go:447]     Content-Length: 378
+I0628 09:58:37.616665    9262 round_trippers.go:441] Response Status: 200 OK in 1 milliseconds
+I0628 09:58:37.616865    9262 round_trippers.go:444] Response Headers:
+I0628 09:58:37.616871    9262 round_trippers.go:447]     Content-Type: application/json
+I0628 09:58:37.616877    9262 round_trippers.go:447]     Content-Length: 207
+I0628 09:58:37.616886    9262 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:28:37 GMT
+I0628 09:58:37.617964    9262 round_trippers.go:441] Response Status: 200 OK in 3 milliseconds
+I0628 09:58:37.617978    9262 round_trippers.go:444] Response Headers:
+I0628 09:58:37.617984    9262 round_trippers.go:447]     Content-Type: application/json
+I0628 09:58:37.617990    9262 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:28:37 GMT
+I0628 09:58:37.618011    9262 round_trippers.go:441] Response Status: 200 OK in 3 milliseconds
+I0628 09:58:37.618018    9262 round_trippers.go:444] Response Headers:
+I0628 09:58:37.618022    9262 round_trippers.go:447]     Content-Type: application/json
+I0628 09:58:37.618026    9262 round_trippers.go:447]     Content-Length: 468
+I0628 09:58:37.618032    9262 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:28:37 GMT
+I0628 09:58:37.618047    9262 round_trippers.go:441] Response Status: 200 OK in 3 milliseconds
+I0628 09:58:37.618054    9262 round_trippers.go:444] Response Headers:
+I0628 09:58:37.618059    9262 round_trippers.go:447]     Content-Type: application/json
+I0628 09:58:37.618065    9262 round_trippers.go:447]     Content-Length: 596
+I0628 09:58:37.618070    9262 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:28:37 GMT
+I0628 09:58:37.618156    9262 round_trippers.go:441] Response Status: 200 OK in 3 milliseconds
+I0628 09:58:37.618164    9262 round_trippers.go:444] Response Headers:
+I0628 09:58:37.618169    9262 round_trippers.go:447]     Content-Type: application/json
+I0628 09:58:37.618173    9262 round_trippers.go:447]     Content-Length: 292
+I0628 09:58:37.618176    9262 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:28:37 GMT
+I0628 09:58:37.618942    9262 round_trippers.go:441] Response Status: 200 OK in 4 milliseconds
+I0628 09:58:37.618952    9262 round_trippers.go:444] Response Headers:
+I0628 09:58:37.618955    9262 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:28:37 GMT
+I0628 09:58:37.618960    9262 round_trippers.go:447]     Content-Type: application/json
+I0628 09:58:37.618966    9262 round_trippers.go:447]     Content-Length: 373
+I0628 09:58:37.620997    9262 round_trippers.go:441] Response Status: 200 OK in 5 milliseconds
+I0628 09:58:37.621013    9262 round_trippers.go:444] Response Headers:
+I0628 09:58:37.621021    9262 round_trippers.go:447]     Content-Type: application/json
+I0628 09:58:37.621027    9262 round_trippers.go:447]     Content-Length: 361
+I0628 09:58:37.621030    9262 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:28:37 GMT
+I0628 09:58:37.621120    9262 round_trippers.go:441] Response Status: 200 OK in 6 milliseconds
+I0628 09:58:37.621126    9262 round_trippers.go:441] Response Status: 200 OK in 5 milliseconds
+I0628 09:58:37.621137    9262 round_trippers.go:444] Response Headers:
+I0628 09:58:37.621143    9262 round_trippers.go:447]     Content-Type: application/json
+I0628 09:58:37.621146    9262 round_trippers.go:441] Response Status: 200 OK in 6 milliseconds
+I0628 09:58:37.621150    9262 round_trippers.go:447]     Content-Length: 2015
+I0628 09:58:37.621153    9262 round_trippers.go:444] Response Headers:
+I0628 09:58:37.621157    9262 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:28:37 GMT
+I0628 09:58:37.621160    9262 round_trippers.go:447]     Content-Type: application/json
+I0628 09:58:37.621166    9262 round_trippers.go:447]     Content-Length: 402
+I0628 09:58:37.621172    9262 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:28:37 GMT
+I0628 09:58:37.621177    9262 round_trippers.go:441] Response Status: 200 OK in 5 milliseconds
+I0628 09:58:37.621184    9262 round_trippers.go:444] Response Headers:
+I0628 09:58:37.621191    9262 round_trippers.go:447]     Content-Type: application/json
+I0628 09:58:37.621194    9262 round_trippers.go:441] Response Status: 200 OK in 6 milliseconds
+I0628 09:58:37.621137    9262 round_trippers.go:441] Response Status: 200 OK in 6 milliseconds
+I0628 09:58:37.621197    9262 round_trippers.go:447]     Content-Length: 460
+I0628 09:58:37.621205    9262 round_trippers.go:444] Response Headers:
+I0628 09:58:37.621208    9262 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:28:37 GMT
+I0628 09:58:37.621212    9262 round_trippers.go:447]     Content-Type: application/json
+I0628 09:58:37.621218    9262 round_trippers.go:447]     Content-Length: 771
+I0628 09:58:37.621224    9262 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:28:37 GMT
+I0628 09:58:37.621129    9262 round_trippers.go:444] Response Headers:
+I0628 09:58:37.621237    9262 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:28:37 GMT
+I0628 09:58:37.621247    9262 round_trippers.go:447]     Content-Type: application/json
+I0628 09:58:37.621254    9262 round_trippers.go:447]     Content-Length: 202
+I0628 09:58:37.621225    9262 round_trippers.go:441] Response Status: 200 OK in 5 milliseconds
+I0628 09:58:37.621268    9262 round_trippers.go:444] Response Headers:
+I0628 09:58:37.621275    9262 round_trippers.go:447]     Content-Type: application/json
+I0628 09:58:37.621279    9262 round_trippers.go:447]     Content-Length: 632
+I0628 09:58:37.621283    9262 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:28:37 GMT
+I0628 09:58:37.621201    9262 round_trippers.go:444] Response Headers:
+I0628 09:58:37.621294    9262 round_trippers.go:447]     Content-Type: application/json
+I0628 09:58:37.621300    9262 round_trippers.go:447]     Content-Length: 473
+I0628 09:58:37.621302    9262 round_trippers.go:441] Response Status: 200 OK in 6 milliseconds
+I0628 09:58:37.621315    9262 round_trippers.go:444] Response Headers:
+I0628 09:58:37.621323    9262 round_trippers.go:447]     Content-Type: application/json
+I0628 09:58:37.621329    9262 round_trippers.go:447]     Content-Length: 591
+I0628 09:58:37.621335    9262 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:28:37 GMT
+I0628 09:58:37.621306    9262 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:28:37 GMT
+I0628 09:58:37.621394    9262 round_trippers.go:441] Response Status: 200 OK in 6 milliseconds
+I0628 09:58:37.621413    9262 round_trippers.go:444] Response Headers:
+I0628 09:58:37.621423    9262 round_trippers.go:441] Response Status: 200 OK in 6 milliseconds
+I0628 09:58:37.621431    9262 round_trippers.go:444] Response Headers:
+I0628 09:58:37.621437    9262 round_trippers.go:447]     Content-Type: application/json
+I0628 09:58:37.621443    9262 round_trippers.go:447]     Content-Length: 519
+I0628 09:58:37.621443    9262 round_trippers.go:441] Response Status: 200 OK in 6 milliseconds
+I0628 09:58:37.621459    9262 round_trippers.go:444] Response Headers:
+I0628 09:58:37.621471    9262 round_trippers.go:447]     Content-Type: application/json
+I0628 09:58:37.621482    9262 round_trippers.go:447]     Content-Length: 272
+I0628 09:58:37.621492    9262 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:28:37 GMT
+I0628 09:58:37.621423    9262 round_trippers.go:447]     Content-Type: application/json
+I0628 09:58:37.621517    9262 round_trippers.go:447]     Content-Length: 466
+I0628 09:58:37.621528    9262 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:28:37 GMT
+I0628 09:58:37.621407    9262 round_trippers.go:441] Response Status: 200 OK in 6 milliseconds
+I0628 09:58:37.621570    9262 round_trippers.go:444] Response Headers:
+I0628 09:58:37.621578    9262 round_trippers.go:447]     Content-Type: application/json
+I0628 09:58:37.621584    9262 round_trippers.go:447]     Content-Length: 2340
+I0628 09:58:37.621590    9262 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:28:37 GMT
+I0628 09:58:37.621618    9262 round_trippers.go:441] Response Status: 200 OK in 6 milliseconds
+I0628 09:58:37.621628    9262 round_trippers.go:444] Response Headers:
+I0628 09:58:37.621635    9262 round_trippers.go:447]     Content-Type: application/json
+I0628 09:58:37.621645    9262 round_trippers.go:447]     Content-Length: 2016
+I0628 09:58:37.621653    9262 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:28:37 GMT
+I0628 09:58:37.621398    9262 round_trippers.go:441] Response Status: 200 OK in 6 milliseconds
+I0628 09:58:37.621687    9262 round_trippers.go:444] Response Headers:
+I0628 09:58:37.621692    9262 round_trippers.go:447]     Content-Type: application/json
+I0628 09:58:37.621699    9262 round_trippers.go:447]     Content-Length: 776
+I0628 09:58:37.621703    9262 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:28:37 GMT
+I0628 09:58:37.621450    9262 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:28:37 GMT
+I0628 09:58:37.681032    9262 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"authentication.k8s.io/v1beta1","resources":[{"name":"tokenreviews","singularName":"","namespaced":false,"kind":"TokenReview","verbs":["create"]}]}
+I0628 09:58:37.714917    9262 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"certificates.k8s.io/v1beta1","resources":[{"name":"certificatesigningrequests","singularName":"","namespaced":false,"kind":"CertificateSigningRequest","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["csr"]},{"name":"certificatesigningrequests/approval","singularName":"","namespaced":false,"kind":"CertificateSigningRequest","verbs":["update"]},{"name":"certificatesigningrequests/status","singularName":"","namespaced":false,"kind":"CertificateSigningRequest","verbs":["update"]}]}
+I0628 09:58:37.756906    9262 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"authorization.k8s.io/v1beta1","resources":[{"name":"localsubjectaccessreviews","singularName":"","namespaced":true,"kind":"LocalSubjectAccessReview","verbs":["create"]},{"name":"selfsubjectaccessreviews","singularName":"","namespaced":false,"kind":"SelfSubjectAccessReview","verbs":["create"]},{"name":"selfsubjectrulesreviews","singularName":"","namespaced":false,"kind":"SelfSubjectRulesReview","verbs":["create"]},{"name":"subjectaccessreviews","singularName":"","namespaced":false,"kind":"SubjectAccessReview","verbs":["create"]}]}
+I0628 09:58:37.798991    9262 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"apps/v1beta1","resources":[{"name":"controllerrevisions","singularName":"","namespaced":true,"kind":"ControllerRevision","verbs":["create","delete","deletecollection","get","list","patch","update","watch"]},{"name":"deployments","singularName":"","namespaced":true,"kind":"Deployment","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["deploy"],"categories":["all"]},{"name":"deployments/rollback","singularName":"","namespaced":true,"kind":"DeploymentRollback","verbs":["create"]},{"name":"deployments/scale","singularName":"","namespaced":true,"group":"apps","version":"v1beta1","kind":"Scale","verbs":["get","patch","update"]},{"name":"deployments/status","singularName":"","namespaced":true,"kind":"Deployment","verbs":["get","patch","update"]},{"name":"statefulsets","singularName":"","namespaced":true,"kind":"StatefulSet","verbs":["create","delete","deletecollection","get","list","patch","update","watch"]," [truncated 314 chars]
+I0628 09:58:37.841076    9262 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"storage.k8s.io/v1","resources":[{"name":"storageclasses","singularName":"","namespaced":false,"kind":"StorageClass","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["sc"]}]}
+I0628 09:58:37.874980    9262 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"networking.k8s.io/v1","resources":[{"name":"networkpolicies","singularName":"","namespaced":true,"kind":"NetworkPolicy","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["netpol"]}]}
+I0628 09:58:37.908821    9262 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"autoscaling/v2beta1","resources":[{"name":"horizontalpodautoscalers","singularName":"","namespaced":true,"kind":"HorizontalPodAutoscaler","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["hpa"],"categories":["all"]},{"name":"horizontalpodautoscalers/status","singularName":"","namespaced":true,"kind":"HorizontalPodAutoscaler","verbs":["get","patch","update"]}]}
+I0628 09:58:37.942498    9262 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"autoscaling/v1","resources":[{"name":"horizontalpodautoscalers","singularName":"","namespaced":true,"kind":"HorizontalPodAutoscaler","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["hpa"],"categories":["all"]},{"name":"horizontalpodautoscalers/status","singularName":"","namespaced":true,"kind":"HorizontalPodAutoscaler","verbs":["get","patch","update"]}]}
+I0628 09:58:37.984423    9262 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"apiregistration.k8s.io/v1beta1","resources":[{"name":"apiservices","singularName":"","namespaced":false,"kind":"APIService","verbs":["create","delete","deletecollection","get","list","patch","update","watch"]},{"name":"apiservices/status","singularName":"","namespaced":false,"kind":"APIService","verbs":["update"]}]}
+I0628 09:58:38.026463    9262 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"rbac.authorization.k8s.io/v1","resources":[{"name":"clusterrolebindings","singularName":"","namespaced":false,"kind":"ClusterRoleBinding","verbs":["create","delete","deletecollection","get","list","patch","update","watch"]},{"name":"clusterroles","singularName":"","namespaced":false,"kind":"ClusterRole","verbs":["create","delete","deletecollection","get","list","patch","update","watch"]},{"name":"rolebindings","singularName":"","namespaced":true,"kind":"RoleBinding","verbs":["create","delete","deletecollection","get","list","patch","update","watch"]},{"name":"roles","singularName":"","namespaced":true,"kind":"Role","verbs":["create","delete","deletecollection","get","list","patch","update","watch"]}]}
+I0628 09:58:38.068603    9262 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"batch/v1beta1","resources":[{"name":"cronjobs","singularName":"","namespaced":true,"kind":"CronJob","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["cj"],"categories":["all"]},{"name":"cronjobs/status","singularName":"","namespaced":true,"kind":"CronJob","verbs":["get","patch","update"]}]}
+I0628 09:58:38.110699    9262 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"batch/v1","resources":[{"name":"jobs","singularName":"","namespaced":true,"kind":"Job","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"categories":["all"]},{"name":"jobs/status","singularName":"","namespaced":true,"kind":"Job","verbs":["get","patch","update"]}]}
+I0628 09:58:38.152733    9262 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"apiextensions.k8s.io/v1beta1","resources":[{"name":"customresourcedefinitions","singularName":"","namespaced":false,"kind":"CustomResourceDefinition","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["crd","crds"]},{"name":"customresourcedefinitions/status","singularName":"","namespaced":false,"kind":"CustomResourceDefinition","verbs":["update"]}]}
+I0628 09:58:38.236968    9262 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"apiregistration.k8s.io/v1","resources":[{"name":"apiservices","singularName":"","namespaced":false,"kind":"APIService","verbs":["create","delete","deletecollection","get","list","patch","update","watch"]},{"name":"apiservices/status","singularName":"","namespaced":false,"kind":"APIService","verbs":["update"]}]}
+I0628 09:58:38.279186    9262 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"storage.k8s.io/v1beta1","resources":[{"name":"storageclasses","singularName":"","namespaced":false,"kind":"StorageClass","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["sc"]},{"name":"volumeattachments","singularName":"","namespaced":false,"kind":"VolumeAttachment","verbs":["create","delete","deletecollection","get","list","patch","update","watch"]}]}
+I0628 09:58:38.321293    9262 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"apps/v1beta2","resources":[{"name":"controllerrevisions","singularName":"","namespaced":true,"kind":"ControllerRevision","verbs":["create","delete","deletecollection","get","list","patch","update","watch"]},{"name":"daemonsets","singularName":"","namespaced":true,"kind":"DaemonSet","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["ds"],"categories":["all"]},{"name":"daemonsets/status","singularName":"","namespaced":true,"kind":"DaemonSet","verbs":["get","patch","update"]},{"name":"deployments","singularName":"","namespaced":true,"kind":"Deployment","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["deploy"],"categories":["all"]},{"name":"deployments/scale","singularName":"","namespaced":true,"group":"apps","version":"v1beta2","kind":"Scale","verbs":["get","patch","update"]},{"name":"deployments/status","singularName":"","namespaced":true,"kind":"Deploym [truncated 991 chars]
+I0628 09:58:38.373123    9262 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"events.k8s.io/v1beta1","resources":[{"name":"events","singularName":"","namespaced":true,"kind":"Event","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["ev"]}]}
+I0628 09:58:38.415043    9262 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"policy/v1beta1","resources":[{"name":"poddisruptionbudgets","singularName":"","namespaced":true,"kind":"PodDisruptionBudget","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["pdb"]},{"name":"poddisruptionbudgets/status","singularName":"","namespaced":true,"kind":"PodDisruptionBudget","verbs":["get","patch","update"]},{"name":"podsecuritypolicies","singularName":"","namespaced":false,"kind":"PodSecurityPolicy","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["psp"]}]}
+I0628 09:58:38.457183    9262 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"authorization.k8s.io/v1","resources":[{"name":"localsubjectaccessreviews","singularName":"","namespaced":true,"kind":"LocalSubjectAccessReview","verbs":["create"]},{"name":"selfsubjectaccessreviews","singularName":"","namespaced":false,"kind":"SelfSubjectAccessReview","verbs":["create"]},{"name":"selfsubjectrulesreviews","singularName":"","namespaced":false,"kind":"SelfSubjectRulesReview","verbs":["create"]},{"name":"subjectaccessreviews","singularName":"","namespaced":false,"kind":"SubjectAccessReview","verbs":["create"]}]}
+I0628 09:58:38.490928    9262 request.go:947] Response Body: {"kind":"APIResourceList","groupVersion":"extensions/v1beta1","resources":[{"name":"daemonsets","singularName":"","namespaced":true,"kind":"DaemonSet","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["ds"]},{"name":"daemonsets/status","singularName":"","namespaced":true,"kind":"DaemonSet","verbs":["get","patch","update"]},{"name":"deployments","singularName":"","namespaced":true,"kind":"Deployment","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["deploy"]},{"name":"deployments/rollback","singularName":"","namespaced":true,"kind":"DeploymentRollback","verbs":["create"]},{"name":"deployments/scale","singularName":"","namespaced":true,"group":"extensions","version":"v1beta1","kind":"Scale","verbs":["get","patch","update"]},{"name":"deployments/status","singularName":"","namespaced":true,"kind":"Deployment","verbs":["get","patch","update"]},{"name":"ingresses","singularName":"","namespaced":true,"kind":"Ingress"," [truncated 1316 chars]
+I0628 09:58:38.549803    9262 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"authentication.k8s.io/v1","resources":[{"name":"tokenreviews","singularName":"","namespaced":false,"kind":"TokenReview","verbs":["create"]}]}
+I0628 09:58:38.583685    9262 request.go:947] Response Body: {"kind":"APIResourceList","groupVersion":"v1","resources":[{"name":"bindings","singularName":"","namespaced":true,"kind":"Binding","verbs":["create"]},{"name":"componentstatuses","singularName":"","namespaced":false,"kind":"ComponentStatus","verbs":["get","list"],"shortNames":["cs"]},{"name":"configmaps","singularName":"","namespaced":true,"kind":"ConfigMap","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["cm"]},{"name":"endpoints","singularName":"","namespaced":true,"kind":"Endpoints","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["ep"]},{"name":"events","singularName":"","namespaced":true,"kind":"Event","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["ev"]},{"name":"limitranges","singularName":"","namespaced":true,"kind":"LimitRange","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["limits"]},{"name":"names [truncated 4110 chars]
+I0628 09:58:38.625810    9262 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"apps/v1","resources":[{"name":"controllerrevisions","singularName":"","namespaced":true,"kind":"ControllerRevision","verbs":["create","delete","deletecollection","get","list","patch","update","watch"]},{"name":"daemonsets","singularName":"","namespaced":true,"kind":"DaemonSet","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["ds"],"categories":["all"]},{"name":"daemonsets/status","singularName":"","namespaced":true,"kind":"DaemonSet","verbs":["get","patch","update"]},{"name":"deployments","singularName":"","namespaced":true,"kind":"Deployment","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["deploy"],"categories":["all"]},{"name":"deployments/scale","singularName":"","namespaced":true,"group":"autoscaling","version":"v1","kind":"Scale","verbs":["get","patch","update"]},{"name":"deployments/status","singularName":"","namespaced":true,"kind":"Deployment [truncated 992 chars]
+I0628 09:58:38.659554    9262 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"rbac.authorization.k8s.io/v1beta1","resources":[{"name":"clusterrolebindings","singularName":"","namespaced":false,"kind":"ClusterRoleBinding","verbs":["create","delete","deletecollection","get","list","patch","update","watch"]},{"name":"clusterroles","singularName":"","namespaced":false,"kind":"ClusterRole","verbs":["create","delete","deletecollection","get","list","patch","update","watch"]},{"name":"rolebindings","singularName":"","namespaced":true,"kind":"RoleBinding","verbs":["create","delete","deletecollection","get","list","patch","update","watch"]},{"name":"roles","singularName":"","namespaced":true,"kind":"Role","verbs":["create","delete","deletecollection","get","list","patch","update","watch"]}]}
+I0628 09:58:38.701452    9262 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"admissionregistration.k8s.io/v1beta1","resources":[{"name":"mutatingwebhookconfigurations","singularName":"","namespaced":false,"kind":"MutatingWebhookConfiguration","verbs":["create","delete","deletecollection","get","list","patch","update","watch"]},{"name":"validatingwebhookconfigurations","singularName":"","namespaced":false,"kind":"ValidatingWebhookConfiguration","verbs":["create","delete","deletecollection","get","list","patch","update","watch"]}]}
+I0628 09:58:39.890953    9262 round_trippers.go:416] GET https://192.168.99.100:8443/apis/apps/v1/namespaces/demo/deployments/nginx
+I0628 09:58:39.890966    9262 round_trippers.go:423] Request Headers:
+I0628 09:58:39.890974    9262 round_trippers.go:426]     Accept: application/json
+I0628 09:58:39.890982    9262 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 09:58:39.893452    9262 round_trippers.go:441] Response Status: 200 OK in 2 milliseconds
+I0628 09:58:39.893471    9262 round_trippers.go:444] Response Headers:
+I0628 09:58:39.893477    9262 round_trippers.go:447]     Content-Type: application/json
+I0628 09:58:39.893481    9262 round_trippers.go:447]     Content-Length: 2064
+I0628 09:58:39.893486    9262 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:28:39 GMT
+I0628 09:58:39.893514    9262 request.go:947] Response Body: {"kind":"Deployment","apiVersion":"apps/v1","metadata":{"name":"nginx","namespace":"demo","selfLink":"/apis/apps/v1/namespaces/demo/deployments/nginx","uid":"2d28798b-995d-11e9-90cb-0800275cd445","resourceVersion":"694946","generation":1,"creationTimestamp":"2019-06-28T04:28:28Z","annotations":{"deployment.kubernetes.io/revision":"1","kubectl.kubernetes.io/last-applied-configuration":"{\"apiVersion\":\"apps/v1\",\"kind\":\"Deployment\",\"metadata\":{\"annotations\":{},\"name\":\"nginx\",\"namespace\":\"demo\"},\"spec\":{\"replicas\":2,\"selector\":{\"matchLabels\":{\"app\":\"nginx\"}},\"strategy\":{\"type\":\"Recreate\"},\"template\":{\"metadata\":{\"labels\":{\"app\":\"nginx\"}},\"spec\":{\"containers\":[{\"image\":\"nginx\",\"name\":\"nginx\",\"ports\":[{\"containerPort\":80}]}],\"nodeSelector\":{\"beta.kubernetes.io/os\":\"linux\"}}}}}\n"}},"spec":{"replicas":2,"selector":{"matchLabels":{"app":"nginx"}},"template":{"metadata":{"creationTimestamp":null,"labels":{"app":"nginx"}},"spec":{"containers":[{"name" [truncated 1040 chars]
+deployment.apps/nginx unchanged
+paramanata@paramanata-OptiPlex-3020:~$ 
+
+
+
+paramanata@paramanata-OptiPlex-3020:~$ 
+paramanata@paramanata-OptiPlex-3020:~$ kubectl apply -f busybox.yaml --v=8
+I0628 10:13:16.606681   10342 loader.go:359] Config loaded from file:  /home/paramanata/.kube/config
+I0628 10:13:16.607581   10342 round_trippers.go:416] GET https://192.168.99.100:8443/openapi/v2?timeout=32s
+I0628 10:13:16.607591   10342 round_trippers.go:423] Request Headers:
+I0628 10:13:16.607595   10342 round_trippers.go:426]     Accept: application/com.github.proto-openapi.spec.v2@v1.0+protobuf
+I0628 10:13:16.607600   10342 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:13:16.620437   10342 round_trippers.go:441] Response Status: 200 OK in 12 milliseconds
+I0628 10:13:16.620462   10342 round_trippers.go:444] Response Headers:
+I0628 10:13:16.620473   10342 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:43:16 GMT
+I0628 10:13:16.620480   10342 round_trippers.go:447]     Etag: "1D5713438F421F596E1A4E508FD3D2D469AA6C89D51E52228FD9DE246633C8A4A054457EF762EDE1BC57503EBCE1029915303BAFE856EC60CCA3A6E4A33EC9A9"
+I0628 10:13:16.620492   10342 round_trippers.go:447]     Last-Modified: Thu, 20 Jun 2019 06:06:48 GMT
+I0628 10:13:16.620499   10342 round_trippers.go:447]     X-From-Cache: 1
+I0628 10:13:16.620505   10342 round_trippers.go:447]     Accept-Ranges: bytes
+I0628 10:13:16.620511   10342 round_trippers.go:447]     Content-Type: application/octet-stream
+I0628 10:13:16.620517   10342 round_trippers.go:447]     Vary: Accept-Encoding
+I0628 10:13:16.620523   10342 round_trippers.go:447]     Vary: Accept
+I0628 10:13:16.620530   10342 round_trippers.go:447]     X-Varied-Accept: application/com.github.proto-openapi.spec.v2@v1.0+protobuf
+I0628 10:13:16.806799   10342 request.go:945] Response Body:
+00000000  0a 03 32 2e 30 12 15 0a  0a 4b 75 62 65 72 6e 65  |..2.0....Kuberne|
+00000010  74 65 73 12 07 76 31 2e  31 30 2e 30 42 a2 a5 66  |tes..v1.10.0B..f|
+00000020  12 ca 02 0a 05 2f 61 70  69 2f 12 c0 02 12 bd 02  |...../api/......|
+00000030  0a 04 63 6f 72 65 1a 1a  67 65 74 20 61 76 61 69  |..core..get avai|
+00000040  6c 61 62 6c 65 20 41 50  49 20 76 65 72 73 69 6f  |lable API versio|
+00000050  6e 73 2a 12 67 65 74 43  6f 72 65 41 50 49 56 65  |ns*.getCoreAPIVe|
+00000060  72 73 69 6f 6e 73 32 10  61 70 70 6c 69 63 61 74  |rsions2.applicat|
+00000070  69 6f 6e 2f 6a 73 6f 6e  32 10 61 70 70 6c 69 63  |ion/json2.applic|
+00000080  61 74 69 6f 6e 2f 79 61  6d 6c 32 23 61 70 70 6c  |ation/yaml2#appl|
+00000090  69 63 61 74 69 6f 6e 2f  76 6e 64 2e 6b 75 62 65  |ication/vnd.kube|
+000000a0  72 6e 65 74 65 73 2e 70  72 6f 74 6f 62 75 66 3a  |rnetes.protobuf:|
+000000b0  10 61 70 70 6c 69 63 61  74 69 6f 6e 2f 6a 73 6f  |.application/jso|
+000000c0  6e 3a 10 61 70 70 6c 69  63 61 74 69 6f 6e 2f 79  |n:.application/ [truncated 11209233 chars]
+I0628 10:13:16.894147   10342 round_trippers.go:416] GET https://192.168.99.100:8443/api?timeout=32s
+I0628 10:13:16.894164   10342 round_trippers.go:423] Request Headers:
+I0628 10:13:16.894177   10342 round_trippers.go:426]     Accept: application/json, */*
+I0628 10:13:16.894184   10342 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:13:16.895387   10342 round_trippers.go:441] Response Status: 200 OK in 1 milliseconds
+I0628 10:13:16.895398   10342 round_trippers.go:444] Response Headers:
+I0628 10:13:16.895402   10342 round_trippers.go:447]     Content-Type: application/json
+I0628 10:13:16.895408   10342 round_trippers.go:447]     Content-Length: 137
+I0628 10:13:16.895415   10342 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:43:16 GMT
+I0628 10:13:16.926962   10342 request.go:947] Response Body: {"kind":"APIVersions","versions":["v1"],"serverAddressByClientCIDRs":[{"clientCIDR":"0.0.0.0/0","serverAddress":"192.168.99.100:8443"}]}
+I0628 10:13:16.960924   10342 round_trippers.go:416] GET https://192.168.99.100:8443/apis?timeout=32s
+I0628 10:13:16.960945   10342 round_trippers.go:423] Request Headers:
+I0628 10:13:16.960955   10342 round_trippers.go:426]     Accept: application/json, */*
+I0628 10:13:16.960962   10342 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:13:16.962758   10342 round_trippers.go:441] Response Status: 200 OK in 1 milliseconds
+I0628 10:13:16.962814   10342 round_trippers.go:444] Response Headers:
+I0628 10:13:16.962827   10342 round_trippers.go:447]     Content-Type: application/json
+I0628 10:13:16.962836   10342 round_trippers.go:447]     Content-Length: 3746
+I0628 10:13:16.962845   10342 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:43:16 GMT
+I0628 10:13:17.002751   10342 request.go:947] Response Body: {"kind":"APIGroupList","apiVersion":"v1","groups":[{"name":"apiregistration.k8s.io","versions":[{"groupVersion":"apiregistration.k8s.io/v1","version":"v1"},{"groupVersion":"apiregistration.k8s.io/v1beta1","version":"v1beta1"}],"preferredVersion":{"groupVersion":"apiregistration.k8s.io/v1","version":"v1"},"serverAddressByClientCIDRs":null},{"name":"extensions","versions":[{"groupVersion":"extensions/v1beta1","version":"v1beta1"}],"preferredVersion":{"groupVersion":"extensions/v1beta1","version":"v1beta1"},"serverAddressByClientCIDRs":null},{"name":"apps","versions":[{"groupVersion":"apps/v1","version":"v1"},{"groupVersion":"apps/v1beta2","version":"v1beta2"},{"groupVersion":"apps/v1beta1","version":"v1beta1"}],"preferredVersion":{"groupVersion":"apps/v1","version":"v1"},"serverAddressByClientCIDRs":null},{"name":"events.k8s.io","versions":[{"groupVersion":"events.k8s.io/v1beta1","version":"v1beta1"}],"preferredVersion":{"groupVersion":"events.k8s.io/v1beta1","version":"v1beta1"},"serverAddressByClientCIDRs":nu [truncated 2722 chars]
+I0628 10:13:17.003412   10342 round_trippers.go:416] GET https://192.168.99.100:8443/apis/apiextensions.k8s.io/v1beta1?timeout=32s
+I0628 10:13:17.003439   10342 round_trippers.go:423] Request Headers:
+I0628 10:13:17.003438   10342 round_trippers.go:416] GET https://192.168.99.100:8443/apis/apiregistration.k8s.io/v1beta1?timeout=32s
+I0628 10:13:17.003455   10342 round_trippers.go:426]     Accept: application/json, */*
+I0628 10:13:17.003469   10342 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:13:17.003510   10342 round_trippers.go:416] GET https://192.168.99.100:8443/apis/apps/v1beta1?timeout=32s
+I0628 10:13:17.003510   10342 round_trippers.go:416] GET https://192.168.99.100:8443/apis/extensions/v1beta1?timeout=32s
+I0628 10:13:17.003540   10342 round_trippers.go:423] Request Headers:
+I0628 10:13:17.003552   10342 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:13:17.003563   10342 round_trippers.go:426]     Accept: application/json, */*
+I0628 10:13:17.003580   10342 round_trippers.go:416] GET https://192.168.99.100:8443/apis/apiregistration.k8s.io/v1?timeout=32s
+I0628 10:13:17.003590   10342 round_trippers.go:423] Request Headers:
+I0628 10:13:17.003600   10342 round_trippers.go:426]     Accept: application/json, */*
+I0628 10:13:17.003607   10342 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:13:17.003638   10342 round_trippers.go:416] GET https://192.168.99.100:8443/apis/authentication.k8s.io/v1?timeout=32s
+I0628 10:13:17.003648   10342 round_trippers.go:423] Request Headers:
+I0628 10:13:17.003656   10342 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:13:17.003583   10342 round_trippers.go:416] GET https://192.168.99.100:8443/apis/events.k8s.io/v1beta1?timeout=32s
+I0628 10:13:17.003673   10342 round_trippers.go:423] Request Headers:
+I0628 10:13:17.003681   10342 round_trippers.go:426]     Accept: application/json, */*
+I0628 10:13:17.003688   10342 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:13:17.003716   10342 round_trippers.go:416] GET https://192.168.99.100:8443/apis/authentication.k8s.io/v1beta1?timeout=32s
+I0628 10:13:17.003718   10342 round_trippers.go:416] GET https://192.168.99.100:8443/apis/apps/v1?timeout=32s
+I0628 10:13:17.003524   10342 round_trippers.go:423] Request Headers:
+I0628 10:13:17.003746   10342 round_trippers.go:426]     Accept: application/json, */*
+I0628 10:13:17.003759   10342 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:13:17.003779   10342 round_trippers.go:416] GET https://192.168.99.100:8443/apis/authorization.k8s.io/v1?timeout=32s
+I0628 10:13:17.003788   10342 round_trippers.go:423] Request Headers:
+I0628 10:13:17.003794   10342 round_trippers.go:426]     Accept: application/json, */*
+I0628 10:13:17.003800   10342 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:13:17.003726   10342 round_trippers.go:423] Request Headers:
+I0628 10:13:17.003815   10342 round_trippers.go:426]     Accept: application/json, */*
+I0628 10:13:17.003823   10342 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:13:17.003462   10342 round_trippers.go:423] Request Headers:
+I0628 10:13:17.003882   10342 round_trippers.go:426]     Accept: application/json, */*
+I0628 10:13:17.003893   10342 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:13:17.003918   10342 round_trippers.go:416] GET https://192.168.99.100:8443/apis/autoscaling/v1?timeout=32s
+I0628 10:13:17.003925   10342 round_trippers.go:423] Request Headers:
+I0628 10:13:17.003931   10342 round_trippers.go:426]     Accept: application/json, */*
+I0628 10:13:17.003883   10342 round_trippers.go:416] GET https://192.168.99.100:8443/apis/rbac.authorization.k8s.io/v1?timeout=32s
+I0628 10:13:17.003946   10342 round_trippers.go:423] Request Headers:
+I0628 10:13:17.003953   10342 round_trippers.go:426]     Accept: application/json, */*
+I0628 10:13:17.003961   10342 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:13:17.003973   10342 round_trippers.go:416] GET https://192.168.99.100:8443/apis/autoscaling/v2beta1?timeout=32s
+I0628 10:13:17.003980   10342 round_trippers.go:423] Request Headers:
+I0628 10:13:17.003985   10342 round_trippers.go:426]     Accept: application/json, */*
+I0628 10:13:17.003991   10342 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:13:17.003663   10342 round_trippers.go:426]     Accept: application/json, */*
+I0628 10:13:17.003738   10342 round_trippers.go:423] Request Headers:
+I0628 10:13:17.004057   10342 round_trippers.go:426]     Accept: application/json, */*
+I0628 10:13:17.004063   10342 round_trippers.go:416] GET https://192.168.99.100:8443/apis/batch/v1?timeout=32s
+I0628 10:13:17.003516   10342 round_trippers.go:416] GET https://192.168.99.100:8443/api/v1?timeout=32s
+I0628 10:13:17.004081   10342 round_trippers.go:423] Request Headers:
+I0628 10:13:17.004088   10342 round_trippers.go:426]     Accept: application/json, */*
+I0628 10:13:17.004094   10342 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:13:17.004111   10342 round_trippers.go:416] GET https://192.168.99.100:8443/apis/batch/v1beta1?timeout=32s
+I0628 10:13:17.004119   10342 round_trippers.go:423] Request Headers:
+I0628 10:13:17.004124   10342 round_trippers.go:426]     Accept: application/json, */*
+I0628 10:13:17.004130   10342 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:13:17.004065   10342 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:13:17.003937   10342 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:13:17.004196   10342 round_trippers.go:416] GET https://192.168.99.100:8443/apis/certificates.k8s.io/v1beta1?timeout=32s
+I0628 10:13:17.004204   10342 round_trippers.go:423] Request Headers:
+I0628 10:13:17.004210   10342 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:13:17.004215   10342 round_trippers.go:426]     Accept: application/json, */*
+I0628 10:13:17.004072   10342 round_trippers.go:423] Request Headers:
+I0628 10:13:17.004247   10342 round_trippers.go:426]     Accept: application/json, */*
+I0628 10:13:17.004255   10342 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:13:17.004281   10342 round_trippers.go:416] GET https://192.168.99.100:8443/apis/networking.k8s.io/v1?timeout=32s
+I0628 10:13:17.004288   10342 round_trippers.go:423] Request Headers:
+I0628 10:13:17.004294   10342 round_trippers.go:426]     Accept: application/json, */*
+I0628 10:13:17.004300   10342 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:13:17.004356   10342 round_trippers.go:416] GET https://192.168.99.100:8443/apis/policy/v1beta1?timeout=32s
+I0628 10:13:17.004366   10342 round_trippers.go:423] Request Headers:
+I0628 10:13:17.003436   10342 round_trippers.go:416] GET https://192.168.99.100:8443/apis/apps/v1beta2?timeout=32s
+I0628 10:13:17.004374   10342 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:13:17.004378   10342 round_trippers.go:423] Request Headers:
+I0628 10:13:17.004381   10342 round_trippers.go:426]     Accept: application/json, */*
+I0628 10:13:17.004396   10342 round_trippers.go:426]     Accept: application/json, */*
+I0628 10:13:17.004403   10342 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:13:17.003438   10342 round_trippers.go:416] GET https://192.168.99.100:8443/apis/authorization.k8s.io/v1beta1?timeout=32s
+I0628 10:13:17.004450   10342 round_trippers.go:423] Request Headers:
+I0628 10:13:17.004458   10342 round_trippers.go:426]     Accept: application/json, */*
+I0628 10:13:17.004465   10342 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:13:17.004487   10342 round_trippers.go:416] GET https://192.168.99.100:8443/apis/storage.k8s.io/v1beta1?timeout=32s
+I0628 10:13:17.004502   10342 round_trippers.go:423] Request Headers:
+I0628 10:13:17.004510   10342 round_trippers.go:416] GET https://192.168.99.100:8443/apis/admissionregistration.k8s.io/v1beta1?timeout=32s
+I0628 10:13:17.004513   10342 round_trippers.go:426]     Accept: application/json, */*
+I0628 10:13:17.004373   10342 round_trippers.go:416] GET https://192.168.99.100:8443/apis/rbac.authorization.k8s.io/v1beta1?timeout=32s
+I0628 10:13:17.004529   10342 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:13:17.004565   10342 round_trippers.go:416] GET https://192.168.99.100:8443/apis/storage.k8s.io/v1?timeout=32s
+I0628 10:13:17.004574   10342 round_trippers.go:423] Request Headers:
+I0628 10:13:17.004582   10342 round_trippers.go:426]     Accept: application/json, */*
+I0628 10:13:17.004589   10342 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:13:17.004520   10342 round_trippers.go:423] Request Headers:
+I0628 10:13:17.004638   10342 round_trippers.go:426]     Accept: application/json, */*
+I0628 10:13:17.004648   10342 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:13:17.004531   10342 round_trippers.go:423] Request Headers:
+I0628 10:13:17.004717   10342 round_trippers.go:426]     Accept: application/json, */*
+I0628 10:13:17.004725   10342 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:13:17.005509   10342 round_trippers.go:441] Response Status: 200 OK in 1 milliseconds
+I0628 10:13:17.005530   10342 round_trippers.go:444] Response Headers:
+I0628 10:13:17.005536   10342 round_trippers.go:447]     Content-Type: application/json
+I0628 10:13:17.005542   10342 round_trippers.go:447]     Content-Length: 373
+I0628 10:13:17.005548   10342 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:43:17 GMT
+I0628 10:13:17.006382   10342 round_trippers.go:441] Response Status: 200 OK in 2 milliseconds
+I0628 10:13:17.006394   10342 round_trippers.go:444] Response Headers:
+I0628 10:13:17.006401   10342 round_trippers.go:447]     Content-Type: application/json
+I0628 10:13:17.006406   10342 round_trippers.go:447]     Content-Length: 378
+I0628 10:13:17.006412   10342 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:43:17 GMT
+I0628 10:13:17.006736   10342 round_trippers.go:441] Response Status: 200 OK in 3 milliseconds
+I0628 10:13:17.006749   10342 round_trippers.go:444] Response Headers:
+I0628 10:13:17.006754   10342 round_trippers.go:447]     Content-Type: application/json
+I0628 10:13:17.006759   10342 round_trippers.go:447]     Content-Length: 2340
+I0628 10:13:17.006765   10342 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:43:17 GMT
+I0628 10:13:17.006850   10342 round_trippers.go:441] Response Status: 200 OK in 3 milliseconds
+I0628 10:13:17.006864   10342 round_trippers.go:444] Response Headers:
+I0628 10:13:17.006870   10342 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:43:17 GMT
+I0628 10:13:17.006877   10342 round_trippers.go:447]     Content-Type: application/json
+I0628 10:13:17.006883   10342 round_trippers.go:447]     Content-Length: 1338
+I0628 10:13:17.006939   10342 round_trippers.go:441] Response Status: 200 OK in 3 milliseconds
+I0628 10:13:17.006946   10342 round_trippers.go:444] Response Headers:
+I0628 10:13:17.006952   10342 round_trippers.go:447]     Content-Type: application/json
+I0628 10:13:17.006958   10342 round_trippers.go:447]     Content-Length: 272
+I0628 10:13:17.006964   10342 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:43:17 GMT
+I0628 10:13:17.007009   10342 round_trippers.go:441] Response Status: 200 OK in 3 milliseconds
+I0628 10:13:17.007017   10342 round_trippers.go:444] Response Headers:
+I0628 10:13:17.007024   10342 round_trippers.go:447]     Content-Type: application/json
+I0628 10:13:17.007030   10342 round_trippers.go:447]     Content-Length: 207
+I0628 10:13:17.007036   10342 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:43:17 GMT
+I0628 10:13:17.007054   10342 round_trippers.go:441] Response Status: 200 OK in 3 milliseconds
+I0628 10:13:17.007062   10342 round_trippers.go:444] Response Headers:
+I0628 10:13:17.007067   10342 round_trippers.go:447]     Content-Type: application/json
+I0628 10:13:17.007073   10342 round_trippers.go:447]     Content-Length: 460
+I0628 10:13:17.007085   10342 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:43:17 GMT
+I0628 10:13:17.007413   10342 round_trippers.go:441] Response Status: 200 OK in 3 milliseconds
+I0628 10:13:17.007424   10342 round_trippers.go:444] Response Headers:
+I0628 10:13:17.007431   10342 round_trippers.go:447]     Content-Type: application/json
+I0628 10:13:17.007437   10342 round_trippers.go:447]     Content-Length: 771
+I0628 10:13:17.007443   10342 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:43:17 GMT
+I0628 10:13:17.009109   10342 round_trippers.go:441] Response Status: 200 OK in 4 milliseconds
+I0628 10:13:17.009126   10342 round_trippers.go:444] Response Headers:
+I0628 10:13:17.009134   10342 round_trippers.go:447]     Content-Type: application/json
+I0628 10:13:17.009146   10342 round_trippers.go:447]     Content-Length: 292
+I0628 10:13:17.009152   10342 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:43:17 GMT
+I0628 10:13:17.009186   10342 round_trippers.go:441] Response Status: 200 OK in 5 milliseconds
+I0628 10:13:17.009191   10342 round_trippers.go:444] Response Headers:
+I0628 10:13:17.009195   10342 round_trippers.go:447]     Content-Type: application/json
+I0628 10:13:17.009199   10342 round_trippers.go:447]     Content-Length: 2016
+I0628 10:13:17.009202   10342 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:43:17 GMT
+I0628 10:13:17.009237   10342 round_trippers.go:441] Response Status: 200 OK in 5 milliseconds
+I0628 10:13:17.009241   10342 round_trippers.go:444] Response Headers:
+I0628 10:13:17.009245   10342 round_trippers.go:447]     Content-Type: application/json
+I0628 10:13:17.009249   10342 round_trippers.go:447]     Content-Length: 468
+I0628 10:13:17.009252   10342 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:43:17 GMT
+I0628 10:13:17.009272   10342 round_trippers.go:441] Response Status: 200 OK in 5 milliseconds
+I0628 10:13:17.009276   10342 round_trippers.go:444] Response Headers:
+I0628 10:13:17.009279   10342 round_trippers.go:447]     Content-Type: application/json
+I0628 10:13:17.009283   10342 round_trippers.go:447]     Content-Length: 361
+I0628 10:13:17.009287   10342 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:43:17 GMT
+I0628 10:13:17.009305   10342 round_trippers.go:441] Response Status: 200 OK in 5 milliseconds
+I0628 10:13:17.009309   10342 round_trippers.go:444] Response Headers:
+I0628 10:13:17.009312   10342 round_trippers.go:447]     Content-Type: application/json
+I0628 10:13:17.009316   10342 round_trippers.go:447]     Content-Length: 594
+I0628 10:13:17.009319   10342 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:43:17 GMT
+I0628 10:13:17.009340   10342 round_trippers.go:441] Response Status: 200 OK in 5 milliseconds
+I0628 10:13:17.009344   10342 round_trippers.go:444] Response Headers:
+I0628 10:13:17.009348   10342 round_trippers.go:447]     Content-Type: application/json
+I0628 10:13:17.009352   10342 round_trippers.go:447]     Content-Length: 402
+I0628 10:13:17.009355   10342 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:43:17 GMT
+I0628 10:13:17.009373   10342 round_trippers.go:441] Response Status: 200 OK in 4 milliseconds
+I0628 10:13:17.009377   10342 round_trippers.go:444] Response Headers:
+I0628 10:13:17.009380   10342 round_trippers.go:447]     Content-Type: application/json
+I0628 10:13:17.009384   10342 round_trippers.go:447]     Content-Length: 519
+I0628 10:13:17.009388   10342 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:43:17 GMT
+I0628 10:13:17.009416   10342 round_trippers.go:441] Response Status: 200 OK in 4 milliseconds
+I0628 10:13:17.009420   10342 round_trippers.go:444] Response Headers:
+I0628 10:13:17.009424   10342 round_trippers.go:447]     Content-Length: 284
+I0628 10:13:17.009428   10342 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:43:17 GMT
+I0628 10:13:17.009432   10342 round_trippers.go:447]     Content-Type: application/json
+I0628 10:13:17.009451   10342 round_trippers.go:441] Response Status: 200 OK in 4 milliseconds
+I0628 10:13:17.009455   10342 round_trippers.go:444] Response Headers:
+I0628 10:13:17.009458   10342 round_trippers.go:447]     Content-Type: application/json
+I0628 10:13:17.009462   10342 round_trippers.go:447]     Content-Length: 466
+I0628 10:13:17.009466   10342 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:43:17 GMT
+I0628 10:13:17.009490   10342 round_trippers.go:441] Response Status: 200 OK in 5 milliseconds
+I0628 10:13:17.009494   10342 round_trippers.go:444] Response Headers:
+I0628 10:13:17.009498   10342 round_trippers.go:447]     Content-Type: application/json
+I0628 10:13:17.009501   10342 round_trippers.go:447]     Content-Length: 2015
+I0628 10:13:17.009508   10342 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:43:17 GMT
+I0628 10:13:17.009527   10342 round_trippers.go:441] Response Status: 200 OK in 5 milliseconds
+I0628 10:13:17.009531   10342 round_trippers.go:444] Response Headers:
+I0628 10:13:17.009534   10342 round_trippers.go:447]     Content-Length: 596
+I0628 10:13:17.009538   10342 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:43:17 GMT
+I0628 10:13:17.009541   10342 round_trippers.go:447]     Content-Type: application/json
+I0628 10:13:17.009562   10342 round_trippers.go:441] Response Status: 200 OK in 5 milliseconds
+I0628 10:13:17.009566   10342 round_trippers.go:444] Response Headers:
+I0628 10:13:17.009570   10342 round_trippers.go:447]     Content-Length: 632
+I0628 10:13:17.009573   10342 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:43:17 GMT
+I0628 10:13:17.009577   10342 round_trippers.go:447]     Content-Type: application/json
+I0628 10:13:17.009594   10342 round_trippers.go:441] Response Status: 200 OK in 5 milliseconds
+I0628 10:13:17.009599   10342 round_trippers.go:444] Response Headers:
+I0628 10:13:17.009603   10342 round_trippers.go:447]     Content-Type: application/json
+I0628 10:13:17.009606   10342 round_trippers.go:447]     Content-Length: 473
+I0628 10:13:17.009610   10342 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:43:17 GMT
+I0628 10:13:17.009624   10342 round_trippers.go:441] Response Status: 200 OK in 5 milliseconds
+I0628 10:13:17.009628   10342 round_trippers.go:444] Response Headers:
+I0628 10:13:17.009631   10342 round_trippers.go:447]     Content-Type: application/json
+I0628 10:13:17.009635   10342 round_trippers.go:447]     Content-Length: 591
+I0628 10:13:17.009638   10342 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:43:17 GMT
+I0628 10:13:17.009667   10342 round_trippers.go:441] Response Status: 200 OK in 5 milliseconds
+I0628 10:13:17.009672   10342 round_trippers.go:444] Response Headers:
+I0628 10:13:17.009676   10342 round_trippers.go:447]     Content-Type: application/json
+I0628 10:13:17.009679   10342 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:43:17 GMT
+I0628 10:13:17.009757   10342 round_trippers.go:441] Response Status: 200 OK in 5 milliseconds
+I0628 10:13:17.009762   10342 round_trippers.go:444] Response Headers:
+I0628 10:13:17.009765   10342 round_trippers.go:447]     Content-Type: application/json
+I0628 10:13:17.009769   10342 round_trippers.go:447]     Content-Length: 202
+I0628 10:13:17.009772   10342 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:43:17 GMT
+I0628 10:13:17.009807   10342 round_trippers.go:441] Response Status: 200 OK in 5 milliseconds
+I0628 10:13:17.009812   10342 round_trippers.go:444] Response Headers:
+I0628 10:13:17.009815   10342 round_trippers.go:447]     Content-Type: application/json
+I0628 10:13:17.009819   10342 round_trippers.go:447]     Content-Length: 776
+I0628 10:13:17.009823   10342 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:43:17 GMT
+I0628 10:13:17.045145   10342 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"apiregistration.k8s.io/v1beta1","resources":[{"name":"apiservices","singularName":"","namespaced":false,"kind":"APIService","verbs":["create","delete","deletecollection","get","list","patch","update","watch"]},{"name":"apiservices/status","singularName":"","namespaced":false,"kind":"APIService","verbs":["update"]}]}
+I0628 10:13:17.103808   10342 request.go:947] Response Body: {"kind":"APIResourceList","groupVersion":"extensions/v1beta1","resources":[{"name":"daemonsets","singularName":"","namespaced":true,"kind":"DaemonSet","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["ds"]},{"name":"daemonsets/status","singularName":"","namespaced":true,"kind":"DaemonSet","verbs":["get","patch","update"]},{"name":"deployments","singularName":"","namespaced":true,"kind":"Deployment","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["deploy"]},{"name":"deployments/rollback","singularName":"","namespaced":true,"kind":"DeploymentRollback","verbs":["create"]},{"name":"deployments/scale","singularName":"","namespaced":true,"group":"extensions","version":"v1beta1","kind":"Scale","verbs":["get","patch","update"]},{"name":"deployments/status","singularName":"","namespaced":true,"kind":"Deployment","verbs":["get","patch","update"]},{"name":"ingresses","singularName":"","namespaced":true,"kind":"Ingress"," [truncated 1316 chars]
+I0628 10:13:17.146956   10342 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"apps/v1beta1","resources":[{"name":"controllerrevisions","singularName":"","namespaced":true,"kind":"ControllerRevision","verbs":["create","delete","deletecollection","get","list","patch","update","watch"]},{"name":"deployments","singularName":"","namespaced":true,"kind":"Deployment","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["deploy"],"categories":["all"]},{"name":"deployments/rollback","singularName":"","namespaced":true,"kind":"DeploymentRollback","verbs":["create"]},{"name":"deployments/scale","singularName":"","namespaced":true,"group":"apps","version":"v1beta1","kind":"Scale","verbs":["get","patch","update"]},{"name":"deployments/status","singularName":"","namespaced":true,"kind":"Deployment","verbs":["get","patch","update"]},{"name":"statefulsets","singularName":"","namespaced":true,"kind":"StatefulSet","verbs":["create","delete","deletecollection","get","list","patch","update","watch"]," [truncated 314 chars]
+I0628 10:13:17.189222   10342 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"events.k8s.io/v1beta1","resources":[{"name":"events","singularName":"","namespaced":true,"kind":"Event","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["ev"]}]}
+I0628 10:13:17.231262   10342 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"apiextensions.k8s.io/v1beta1","resources":[{"name":"customresourcedefinitions","singularName":"","namespaced":false,"kind":"CustomResourceDefinition","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["crd","crds"]},{"name":"customresourcedefinitions/status","singularName":"","namespaced":false,"kind":"CustomResourceDefinition","verbs":["update"]}]}
+I0628 10:13:17.273315   10342 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"apiregistration.k8s.io/v1","resources":[{"name":"apiservices","singularName":"","namespaced":false,"kind":"APIService","verbs":["create","delete","deletecollection","get","list","patch","update","watch"]},{"name":"apiservices/status","singularName":"","namespaced":false,"kind":"APIService","verbs":["update"]}]}
+I0628 10:13:17.323646   10342 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"networking.k8s.io/v1","resources":[{"name":"networkpolicies","singularName":"","namespaced":true,"kind":"NetworkPolicy","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["netpol"]}]}
+I0628 10:13:17.357599   10342 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"apps/v1","resources":[{"name":"controllerrevisions","singularName":"","namespaced":true,"kind":"ControllerRevision","verbs":["create","delete","deletecollection","get","list","patch","update","watch"]},{"name":"daemonsets","singularName":"","namespaced":true,"kind":"DaemonSet","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["ds"],"categories":["all"]},{"name":"daemonsets/status","singularName":"","namespaced":true,"kind":"DaemonSet","verbs":["get","patch","update"]},{"name":"deployments","singularName":"","namespaced":true,"kind":"Deployment","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["deploy"],"categories":["all"]},{"name":"deployments/scale","singularName":"","namespaced":true,"group":"autoscaling","version":"v1","kind":"Scale","verbs":["get","patch","update"]},{"name":"deployments/status","singularName":"","namespaced":true,"kind":"Deployment [truncated 992 chars]
+I0628 10:13:17.391326   10342 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"autoscaling/v1","resources":[{"name":"horizontalpodautoscalers","singularName":"","namespaced":true,"kind":"HorizontalPodAutoscaler","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["hpa"],"categories":["all"]},{"name":"horizontalpodautoscalers/status","singularName":"","namespaced":true,"kind":"HorizontalPodAutoscaler","verbs":["get","patch","update"]}]}
+I0628 10:13:17.425122   10342 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"batch/v1","resources":[{"name":"jobs","singularName":"","namespaced":true,"kind":"Job","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"categories":["all"]},{"name":"jobs/status","singularName":"","namespaced":true,"kind":"Job","verbs":["get","patch","update"]}]}
+I0628 10:13:17.517502   10342 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"certificates.k8s.io/v1beta1","resources":[{"name":"certificatesigningrequests","singularName":"","namespaced":false,"kind":"CertificateSigningRequest","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["csr"]},{"name":"certificatesigningrequests/approval","singularName":"","namespaced":false,"kind":"CertificateSigningRequest","verbs":["update"]},{"name":"certificatesigningrequests/status","singularName":"","namespaced":false,"kind":"CertificateSigningRequest","verbs":["update"]}]}
+I0628 10:13:17.559604   10342 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"batch/v1beta1","resources":[{"name":"cronjobs","singularName":"","namespaced":true,"kind":"CronJob","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["cj"],"categories":["all"]},{"name":"cronjobs/status","singularName":"","namespaced":true,"kind":"CronJob","verbs":["get","patch","update"]}]}
+I0628 10:13:17.593270   10342 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"admissionregistration.k8s.io/v1beta1","resources":[{"name":"mutatingwebhookconfigurations","singularName":"","namespaced":false,"kind":"MutatingWebhookConfiguration","verbs":["create","delete","deletecollection","get","list","patch","update","watch"]},{"name":"validatingwebhookconfigurations","singularName":"","namespaced":false,"kind":"ValidatingWebhookConfiguration","verbs":["create","delete","deletecollection","get","list","patch","update","watch"]}]}
+I0628 10:13:17.626946   10342 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"storage.k8s.io/v1","resources":[{"name":"storageclasses","singularName":"","namespaced":false,"kind":"StorageClass","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["sc"]}]}
+I0628 10:13:17.669168   10342 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"storage.k8s.io/v1beta1","resources":[{"name":"storageclasses","singularName":"","namespaced":false,"kind":"StorageClass","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["sc"]},{"name":"volumeattachments","singularName":"","namespaced":false,"kind":"VolumeAttachment","verbs":["create","delete","deletecollection","get","list","patch","update","watch"]}]}
+I0628 10:13:17.711201   10342 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"apps/v1beta2","resources":[{"name":"controllerrevisions","singularName":"","namespaced":true,"kind":"ControllerRevision","verbs":["create","delete","deletecollection","get","list","patch","update","watch"]},{"name":"daemonsets","singularName":"","namespaced":true,"kind":"DaemonSet","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["ds"],"categories":["all"]},{"name":"daemonsets/status","singularName":"","namespaced":true,"kind":"DaemonSet","verbs":["get","patch","update"]},{"name":"deployments","singularName":"","namespaced":true,"kind":"Deployment","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["deploy"],"categories":["all"]},{"name":"deployments/scale","singularName":"","namespaced":true,"group":"apps","version":"v1beta2","kind":"Scale","verbs":["get","patch","update"]},{"name":"deployments/status","singularName":"","namespaced":true,"kind":"Deploym [truncated 991 chars]
+I0628 10:13:17.753468   10342 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"authorization.k8s.io/v1beta1","resources":[{"name":"localsubjectaccessreviews","singularName":"","namespaced":true,"kind":"LocalSubjectAccessReview","verbs":["create"]},{"name":"selfsubjectaccessreviews","singularName":"","namespaced":false,"kind":"SelfSubjectAccessReview","verbs":["create"]},{"name":"selfsubjectrulesreviews","singularName":"","namespaced":false,"kind":"SelfSubjectRulesReview","verbs":["create"]},{"name":"subjectaccessreviews","singularName":"","namespaced":false,"kind":"SubjectAccessReview","verbs":["create"]}]}
+I0628 10:13:17.795306   10342 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"policy/v1beta1","resources":[{"name":"poddisruptionbudgets","singularName":"","namespaced":true,"kind":"PodDisruptionBudget","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["pdb"]},{"name":"poddisruptionbudgets/status","singularName":"","namespaced":true,"kind":"PodDisruptionBudget","verbs":["get","patch","update"]},{"name":"podsecuritypolicies","singularName":"","namespaced":false,"kind":"PodSecurityPolicy","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["psp"]}]}
+I0628 10:13:17.829032   10342 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"autoscaling/v2beta1","resources":[{"name":"horizontalpodautoscalers","singularName":"","namespaced":true,"kind":"HorizontalPodAutoscaler","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["hpa"],"categories":["all"]},{"name":"horizontalpodautoscalers/status","singularName":"","namespaced":true,"kind":"HorizontalPodAutoscaler","verbs":["get","patch","update"]}]}
+I0628 10:13:17.879426   10342 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"authorization.k8s.io/v1","resources":[{"name":"localsubjectaccessreviews","singularName":"","namespaced":true,"kind":"LocalSubjectAccessReview","verbs":["create"]},{"name":"selfsubjectaccessreviews","singularName":"","namespaced":false,"kind":"SelfSubjectAccessReview","verbs":["create"]},{"name":"selfsubjectrulesreviews","singularName":"","namespaced":false,"kind":"SelfSubjectRulesReview","verbs":["create"]},{"name":"subjectaccessreviews","singularName":"","namespaced":false,"kind":"SubjectAccessReview","verbs":["create"]}]}
+I0628 10:13:17.921392   10342 request.go:947] Response Body: {"kind":"APIResourceList","groupVersion":"v1","resources":[{"name":"bindings","singularName":"","namespaced":true,"kind":"Binding","verbs":["create"]},{"name":"componentstatuses","singularName":"","namespaced":false,"kind":"ComponentStatus","verbs":["get","list"],"shortNames":["cs"]},{"name":"configmaps","singularName":"","namespaced":true,"kind":"ConfigMap","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["cm"]},{"name":"endpoints","singularName":"","namespaced":true,"kind":"Endpoints","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["ep"]},{"name":"events","singularName":"","namespaced":true,"kind":"Event","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["ev"]},{"name":"limitranges","singularName":"","namespaced":true,"kind":"LimitRange","verbs":["create","delete","deletecollection","get","list","patch","update","watch"],"shortNames":["limits"]},{"name":"names [truncated 4110 chars]
+I0628 10:13:17.964677   10342 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"authentication.k8s.io/v1","resources":[{"name":"tokenreviews","singularName":"","namespaced":false,"kind":"TokenReview","verbs":["create"]}]}
+I0628 10:13:18.006710   10342 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"rbac.authorization.k8s.io/v1","resources":[{"name":"clusterrolebindings","singularName":"","namespaced":false,"kind":"ClusterRoleBinding","verbs":["create","delete","deletecollection","get","list","patch","update","watch"]},{"name":"clusterroles","singularName":"","namespaced":false,"kind":"ClusterRole","verbs":["create","delete","deletecollection","get","list","patch","update","watch"]},{"name":"rolebindings","singularName":"","namespaced":true,"kind":"RoleBinding","verbs":["create","delete","deletecollection","get","list","patch","update","watch"]},{"name":"roles","singularName":"","namespaced":true,"kind":"Role","verbs":["create","delete","deletecollection","get","list","patch","update","watch"]}]}
+I0628 10:13:18.040412   10342 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"rbac.authorization.k8s.io/v1beta1","resources":[{"name":"clusterrolebindings","singularName":"","namespaced":false,"kind":"ClusterRoleBinding","verbs":["create","delete","deletecollection","get","list","patch","update","watch"]},{"name":"clusterroles","singularName":"","namespaced":false,"kind":"ClusterRole","verbs":["create","delete","deletecollection","get","list","patch","update","watch"]},{"name":"rolebindings","singularName":"","namespaced":true,"kind":"RoleBinding","verbs":["create","delete","deletecollection","get","list","patch","update","watch"]},{"name":"roles","singularName":"","namespaced":true,"kind":"Role","verbs":["create","delete","deletecollection","get","list","patch","update","watch"]}]}
+I0628 10:13:18.074110   10342 request.go:947] Response Body: {"kind":"APIResourceList","apiVersion":"v1","groupVersion":"authentication.k8s.io/v1beta1","resources":[{"name":"tokenreviews","singularName":"","namespaced":false,"kind":"TokenReview","verbs":["create"]}]}
+I0628 10:13:19.138294   10342 round_trippers.go:416] GET https://192.168.99.100:8443/api/v1/namespaces/demo/pods/client
+I0628 10:13:19.138307   10342 round_trippers.go:423] Request Headers:
+I0628 10:13:19.138311   10342 round_trippers.go:426]     Accept: application/json
+I0628 10:13:19.138318   10342 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:13:19.140285   10342 round_trippers.go:441] Response Status: 404 Not Found in 1 milliseconds
+I0628 10:13:19.140299   10342 round_trippers.go:444] Response Headers:
+I0628 10:13:19.140305   10342 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:43:19 GMT
+I0628 10:13:19.140310   10342 round_trippers.go:447]     Content-Type: application/json
+I0628 10:13:19.140314   10342 round_trippers.go:447]     Content-Length: 180
+I0628 10:13:19.140346   10342 request.go:947] Response Body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"pods \"client\" not found","reason":"NotFound","details":{"name":"client","kind":"pods"},"code":404}
+I0628 10:13:19.140575   10342 round_trippers.go:416] GET https://192.168.99.100:8443/api/v1/namespaces/demo
+I0628 10:13:19.140588   10342 round_trippers.go:423] Request Headers:
+I0628 10:13:19.140596   10342 round_trippers.go:426]     Accept: application/json
+I0628 10:13:19.140604   10342 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:13:19.142303   10342 round_trippers.go:441] Response Status: 200 OK in 1 milliseconds
+I0628 10:13:19.142322   10342 round_trippers.go:444] Response Headers:
+I0628 10:13:19.142329   10342 round_trippers.go:447]     Content-Type: application/json
+I0628 10:13:19.142334   10342 round_trippers.go:447]     Content-Length: 283
+I0628 10:13:19.142345   10342 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:43:19 GMT
+I0628 10:13:19.142366   10342 request.go:947] Response Body: {"kind":"Namespace","apiVersion":"v1","metadata":{"name":"demo","selfLink":"/api/v1/namespaces/demo","uid":"9fd0ae7c-9958-11e9-90cb-0800275cd445","resourceVersion":"692555","creationTimestamp":"2019-06-28T03:55:52Z"},"spec":{"finalizers":["kubernetes"]},"status":{"phase":"Active"}}
+I0628 10:13:19.142465   10342 request.go:947] Request Body: {"apiVersion":"v1","kind":"Pod","metadata":{"annotations":{"kubectl.kubernetes.io/last-applied-configuration":"{\"apiVersion\":\"v1\",\"kind\":\"Pod\",\"metadata\":{\"annotations\":{},\"labels\":{\"app\":\"client\"},\"name\":\"client\",\"namespace\":\"demo\"},\"spec\":{\"containers\":[{\"args\":[\"/bin/sh\",\"-c\",\"wget -T 2 10.244.198.196 -O -\"],\"image\":\"busybox\",\"name\":\"client\"}],\"nodeSelector\":{\"beta.kubernetes.io/os\":\"linux\"},\"restartPolicy\":\"Never\"}}\n"},"labels":{"app":"client"},"name":"client","namespace":"demo"},"spec":{"containers":[{"args":["/bin/sh","-c","wget -T 2 10.244.198.196 -O -"],"image":"busybox","name":"client"}],"nodeSelector":{"beta.kubernetes.io/os":"linux"},"restartPolicy":"Never"}}
+I0628 10:13:19.142499   10342 round_trippers.go:416] POST https://192.168.99.100:8443/api/v1/namespaces/demo/pods
+I0628 10:13:19.142507   10342 round_trippers.go:423] Request Headers:
+I0628 10:13:19.142514   10342 round_trippers.go:426]     Accept: application/json
+I0628 10:13:19.142521   10342 round_trippers.go:426]     Content-Type: application/json
+I0628 10:13:19.142529   10342 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:13:19.148675   10342 round_trippers.go:441] Response Status: 201 Created in 6 milliseconds
+I0628 10:13:19.148699   10342 round_trippers.go:444] Response Headers:
+I0628 10:13:19.148710   10342 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:43:19 GMT
+I0628 10:13:19.148717   10342 round_trippers.go:447]     Content-Type: application/json
+I0628 10:13:19.148723   10342 round_trippers.go:447]     Content-Length: 1711
+I0628 10:13:19.148768   10342 request.go:947] Response Body: {"kind":"Pod","apiVersion":"v1","metadata":{"name":"client","namespace":"demo","selfLink":"/api/v1/namespaces/demo/pods/client","uid":"405097ad-995f-11e9-90cb-0800275cd445","resourceVersion":"695967","creationTimestamp":"2019-06-28T04:43:19Z","labels":{"app":"client"},"annotations":{"kubectl.kubernetes.io/last-applied-configuration":"{\"apiVersion\":\"v1\",\"kind\":\"Pod\",\"metadata\":{\"annotations\":{},\"labels\":{\"app\":\"client\"},\"name\":\"client\",\"namespace\":\"demo\"},\"spec\":{\"containers\":[{\"args\":[\"/bin/sh\",\"-c\",\"wget -T 2 10.244.198.196 -O -\"],\"image\":\"busybox\",\"name\":\"client\"}],\"nodeSelector\":{\"beta.kubernetes.io/os\":\"linux\"},\"restartPolicy\":\"Never\"}}\n"}},"spec":{"volumes":[{"name":"default-token-9b4dw","secret":{"secretName":"default-token-9b4dw","defaultMode":420}}],"containers":[{"name":"client","image":"busybox","args":["/bin/sh","-c","wget -T 2 10.244.198.196 -O -"],"resources":{},"volumeMounts":[{"name":"default-token-9b4dw","readOnly":true,"mountPath":"/var [truncated 687 chars]
+pod/client created
+paramanata@paramanata-OptiPlex-3020:~$ 
+
+
+paramanata@paramanata-OptiPlex-3020:~$ kubectl get service
+NAME             TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
+go-day1          NodePort    10.111.134.145   <none>        80:32392/TCP     8d
+hello-minikube   NodePort    10.109.185.135   <none>        8080:30221/TCP   8d
+kubernetes       ClusterIP   10.96.0.1        <none>        443/TCP          8d
+paramanata@paramanata-OptiPlex-3020:~$ 
+paramanata@paramanata-OptiPlex-3020:~$ 
+paramanata@paramanata-OptiPlex-3020:~$ 
+paramanata@paramanata-OptiPlex-3020:~$ 
+paramanata@paramanata-OptiPlex-3020:~$ kubectl get deployment
+NAME                  DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+day1                  1         1         1            1           8d
+go-day1               1         1         1            0           8d
+hello-minikube        1         1         1            1           8d
+kubernetes-bootcamp   1         1         1            1           1h
+paramanata@paramanata-OptiPlex-3020:~$ 
+
+
+
+paramanata@paramanata-OptiPlex-3020:~$ kubectl apply -f clusterIP.yaml --v=8
+I0628 10:15:48.141038   10639 loader.go:359] Config loaded from file:  /home/paramanata/.kube/config
+I0628 10:15:48.141840   10639 round_trippers.go:416] GET https://192.168.99.100:8443/openapi/v2?timeout=32s
+I0628 10:15:48.141849   10639 round_trippers.go:423] Request Headers:
+I0628 10:15:48.141854   10639 round_trippers.go:426]     Accept: application/com.github.proto-openapi.spec.v2@v1.0+protobuf
+I0628 10:15:48.141859   10639 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:15:48.159578   10639 round_trippers.go:441] Response Status: 200 OK in 17 milliseconds
+I0628 10:15:48.159593   10639 round_trippers.go:444] Response Headers:
+I0628 10:15:48.159599   10639 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:45:48 GMT
+I0628 10:15:48.159604   10639 round_trippers.go:447]     Etag: "1D5713438F421F596E1A4E508FD3D2D469AA6C89D51E52228FD9DE246633C8A4A054457EF762EDE1BC57503EBCE1029915303BAFE856EC60CCA3A6E4A33EC9A9"
+I0628 10:15:48.159610   10639 round_trippers.go:447]     Last-Modified: Thu, 20 Jun 2019 06:06:48 GMT
+I0628 10:15:48.159614   10639 round_trippers.go:447]     X-From-Cache: 1
+I0628 10:15:48.159618   10639 round_trippers.go:447]     Content-Type: application/octet-stream
+I0628 10:15:48.159623   10639 round_trippers.go:447]     Vary: Accept-Encoding
+I0628 10:15:48.159626   10639 round_trippers.go:447]     Vary: Accept
+I0628 10:15:48.159630   10639 round_trippers.go:447]     X-Varied-Accept: application/com.github.proto-openapi.spec.v2@v1.0+protobuf
+I0628 10:15:48.159634   10639 round_trippers.go:447]     Accept-Ranges: bytes
+I0628 10:15:48.350180   10639 request.go:945] Response Body:
+00000000  0a 03 32 2e 30 12 15 0a  0a 4b 75 62 65 72 6e 65  |..2.0....Kuberne|
+00000010  74 65 73 12 07 76 31 2e  31 30 2e 30 42 a2 a5 66  |tes..v1.10.0B..f|
+00000020  12 ca 02 0a 05 2f 61 70  69 2f 12 c0 02 12 bd 02  |...../api/......|
+00000030  0a 04 63 6f 72 65 1a 1a  67 65 74 20 61 76 61 69  |..core..get avai|
+00000040  6c 61 62 6c 65 20 41 50  49 20 76 65 72 73 69 6f  |lable API versio|
+00000050  6e 73 2a 12 67 65 74 43  6f 72 65 41 50 49 56 65  |ns*.getCoreAPIVe|
+00000060  72 73 69 6f 6e 73 32 10  61 70 70 6c 69 63 61 74  |rsions2.applicat|
+00000070  69 6f 6e 2f 6a 73 6f 6e  32 10 61 70 70 6c 69 63  |ion/json2.applic|
+00000080  61 74 69 6f 6e 2f 79 61  6d 6c 32 23 61 70 70 6c  |ation/yaml2#appl|
+00000090  69 63 61 74 69 6f 6e 2f  76 6e 64 2e 6b 75 62 65  |ication/vnd.kube|
+000000a0  72 6e 65 74 65 73 2e 70  72 6f 74 6f 62 75 66 3a  |rnetes.protobuf:|
+000000b0  10 61 70 70 6c 69 63 61  74 69 6f 6e 2f 6a 73 6f  |.application/jso|
+000000c0  6e 3a 10 61 70 70 6c 69  63 61 74 69 6f 6e 2f 79  |n:.application/ [truncated 11209233 chars]
+I0628 10:15:48.441338   10639 round_trippers.go:416] GET https://192.168.99.100:8443/api/v1/namespaces/demo/services/nginx
+I0628 10:15:48.441355   10639 round_trippers.go:423] Request Headers:
+I0628 10:15:48.441362   10639 round_trippers.go:426]     Accept: application/json
+I0628 10:15:48.441370   10639 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:15:48.443593   10639 round_trippers.go:441] Response Status: 404 Not Found in 2 milliseconds
+I0628 10:15:48.443612   10639 round_trippers.go:444] Response Headers:
+I0628 10:15:48.443620   10639 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:45:48 GMT
+I0628 10:15:48.443626   10639 round_trippers.go:447]     Content-Type: application/json
+I0628 10:15:48.443631   10639 round_trippers.go:447]     Content-Length: 186
+I0628 10:15:48.443656   10639 request.go:947] Response Body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"services \"nginx\" not found","reason":"NotFound","details":{"name":"nginx","kind":"services"},"code":404}
+I0628 10:15:48.443864   10639 round_trippers.go:416] GET https://192.168.99.100:8443/api/v1/namespaces/demo
+I0628 10:15:48.443872   10639 round_trippers.go:423] Request Headers:
+I0628 10:15:48.443877   10639 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:15:48.443882   10639 round_trippers.go:426]     Accept: application/json
+I0628 10:15:48.445963   10639 round_trippers.go:441] Response Status: 200 OK in 2 milliseconds
+I0628 10:15:48.445984   10639 round_trippers.go:444] Response Headers:
+I0628 10:15:48.445988   10639 round_trippers.go:447]     Content-Type: application/json
+I0628 10:15:48.445992   10639 round_trippers.go:447]     Content-Length: 283
+I0628 10:15:48.445996   10639 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:45:48 GMT
+I0628 10:15:48.446015   10639 request.go:947] Response Body: {"kind":"Namespace","apiVersion":"v1","metadata":{"name":"demo","selfLink":"/api/v1/namespaces/demo","uid":"9fd0ae7c-9958-11e9-90cb-0800275cd445","resourceVersion":"692555","creationTimestamp":"2019-06-28T03:55:52Z"},"spec":{"finalizers":["kubernetes"]},"status":{"phase":"Active"}}
+I0628 10:15:48.446117   10639 request.go:947] Request Body: {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{"kubectl.kubernetes.io/last-applied-configuration":"{\"apiVersion\":\"v1\",\"kind\":\"Service\",\"metadata\":{\"annotations\":{},\"labels\":{\"app\":\"nginx\"},\"name\":\"nginx\",\"namespace\":\"demo\"},\"spec\":{\"ports\":[{\"port\":80,\"targetPort\":80}],\"selector\":{\"app\":\"nginx\"}}}\n"},"labels":{"app":"nginx"},"name":"nginx","namespace":"demo"},"spec":{"ports":[{"port":80,"targetPort":80}],"selector":{"app":"nginx"}}}
+I0628 10:15:48.446149   10639 round_trippers.go:416] POST https://192.168.99.100:8443/api/v1/namespaces/demo/services
+I0628 10:15:48.446156   10639 round_trippers.go:423] Request Headers:
+I0628 10:15:48.446161   10639 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:15:48.446166   10639 round_trippers.go:426]     Content-Type: application/json
+I0628 10:15:48.446169   10639 round_trippers.go:426]     Accept: application/json
+I0628 10:15:48.461700   10639 round_trippers.go:441] Response Status: 201 Created in 15 milliseconds
+I0628 10:15:48.461720   10639 round_trippers.go:444] Response Headers:
+I0628 10:15:48.461727   10639 round_trippers.go:447]     Content-Type: application/json
+I0628 10:15:48.461733   10639 round_trippers.go:447]     Content-Length: 779
+I0628 10:15:48.461738   10639 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:45:48 GMT
+I0628 10:15:48.461769   10639 request.go:947] Response Body: {"kind":"Service","apiVersion":"v1","metadata":{"name":"nginx","namespace":"demo","selfLink":"/api/v1/namespaces/demo/services/nginx","uid":"994fbf3a-995f-11e9-90cb-0800275cd445","resourceVersion":"696149","creationTimestamp":"2019-06-28T04:45:48Z","labels":{"app":"nginx"},"annotations":{"kubectl.kubernetes.io/last-applied-configuration":"{\"apiVersion\":\"v1\",\"kind\":\"Service\",\"metadata\":{\"annotations\":{},\"labels\":{\"app\":\"nginx\"},\"name\":\"nginx\",\"namespace\":\"demo\"},\"spec\":{\"ports\":[{\"port\":80,\"targetPort\":80}],\"selector\":{\"app\":\"nginx\"}}}\n"}},"spec":{"ports":[{"protocol":"TCP","port":80,"targetPort":80}],"selector":{"app":"nginx"},"clusterIP":"10.104.238.25","type":"ClusterIP","sessionAffinity":"None"},"status":{"loadBalancer":{}}}
+service/nginx created
+paramanata@paramanata-OptiPlex-3020:~$ 
+	
+	
+	
+	
+	paramanata@paramanata-OptiPlex-3020:~$ kubectl apply -f nodeport.yaml --v=8
+I0628 10:16:28.282185   10704 loader.go:359] Config loaded from file:  /home/paramanata/.kube/config
+I0628 10:16:28.284377   10704 round_trippers.go:416] GET https://192.168.99.100:8443/openapi/v2?timeout=32s
+I0628 10:16:28.284407   10704 round_trippers.go:423] Request Headers:
+I0628 10:16:28.284415   10704 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:16:28.284424   10704 round_trippers.go:426]     Accept: application/com.github.proto-openapi.spec.v2@v1.0+protobuf
+I0628 10:16:28.298321   10704 round_trippers.go:441] Response Status: 200 OK in 13 milliseconds
+I0628 10:16:28.298334   10704 round_trippers.go:444] Response Headers:
+I0628 10:16:28.298338   10704 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:46:28 GMT
+I0628 10:16:28.298341   10704 round_trippers.go:447]     Etag: "1D5713438F421F596E1A4E508FD3D2D469AA6C89D51E52228FD9DE246633C8A4A054457EF762EDE1BC57503EBCE1029915303BAFE856EC60CCA3A6E4A33EC9A9"
+I0628 10:16:28.298348   10704 round_trippers.go:447]     Last-Modified: Thu, 20 Jun 2019 06:06:48 GMT
+I0628 10:16:28.298353   10704 round_trippers.go:447]     Vary: Accept-Encoding
+I0628 10:16:28.298358   10704 round_trippers.go:447]     Vary: Accept
+I0628 10:16:28.298362   10704 round_trippers.go:447]     X-From-Cache: 1
+I0628 10:16:28.298366   10704 round_trippers.go:447]     X-Varied-Accept: application/com.github.proto-openapi.spec.v2@v1.0+protobuf
+I0628 10:16:28.298370   10704 round_trippers.go:447]     Accept-Ranges: bytes
+I0628 10:16:28.298375   10704 round_trippers.go:447]     Content-Type: application/octet-stream
+I0628 10:16:28.486992   10704 request.go:945] Response Body:
+00000000  0a 03 32 2e 30 12 15 0a  0a 4b 75 62 65 72 6e 65  |..2.0....Kuberne|
+00000010  74 65 73 12 07 76 31 2e  31 30 2e 30 42 a2 a5 66  |tes..v1.10.0B..f|
+00000020  12 ca 02 0a 05 2f 61 70  69 2f 12 c0 02 12 bd 02  |...../api/......|
+00000030  0a 04 63 6f 72 65 1a 1a  67 65 74 20 61 76 61 69  |..core..get avai|
+00000040  6c 61 62 6c 65 20 41 50  49 20 76 65 72 73 69 6f  |lable API versio|
+00000050  6e 73 2a 12 67 65 74 43  6f 72 65 41 50 49 56 65  |ns*.getCoreAPIVe|
+00000060  72 73 69 6f 6e 73 32 10  61 70 70 6c 69 63 61 74  |rsions2.applicat|
+00000070  69 6f 6e 2f 6a 73 6f 6e  32 10 61 70 70 6c 69 63  |ion/json2.applic|
+00000080  61 74 69 6f 6e 2f 79 61  6d 6c 32 23 61 70 70 6c  |ation/yaml2#appl|
+00000090  69 63 61 74 69 6f 6e 2f  76 6e 64 2e 6b 75 62 65  |ication/vnd.kube|
+000000a0  72 6e 65 74 65 73 2e 70  72 6f 74 6f 62 75 66 3a  |rnetes.protobuf:|
+000000b0  10 61 70 70 6c 69 63 61  74 69 6f 6e 2f 6a 73 6f  |.application/jso|
+000000c0  6e 3a 10 61 70 70 6c 69  63 61 74 69 6f 6e 2f 79  |n:.application/ [truncated 11209233 chars]
+I0628 10:16:28.580636   10704 round_trippers.go:416] GET https://192.168.99.100:8443/api/v1/namespaces/default/services/my-nodeport-nginx
+I0628 10:16:28.580654   10704 round_trippers.go:423] Request Headers:
+I0628 10:16:28.580659   10704 round_trippers.go:426]     Accept: application/json
+I0628 10:16:28.580663   10704 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:16:28.582944   10704 round_trippers.go:441] Response Status: 404 Not Found in 2 milliseconds
+I0628 10:16:28.582959   10704 round_trippers.go:444] Response Headers:
+I0628 10:16:28.582968   10704 round_trippers.go:447]     Content-Length: 210
+I0628 10:16:28.582976   10704 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:46:28 GMT
+I0628 10:16:28.582983   10704 round_trippers.go:447]     Content-Type: application/json
+I0628 10:16:28.583016   10704 request.go:947] Response Body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"services \"my-nodeport-nginx\" not found","reason":"NotFound","details":{"name":"my-nodeport-nginx","kind":"services"},"code":404}
+I0628 10:16:28.583309   10704 request.go:947] Request Body: {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{"kubectl.kubernetes.io/last-applied-configuration":"{\"apiVersion\":\"v1\",\"kind\":\"Service\",\"metadata\":{\"annotations\":{},\"name\":\"my-nodeport-nginx\",\"namespace\":\"default\"},\"spec\":{\"ports\":[{\"name\":\"http\",\"port\":6080,\"protocol\":\"TCP\",\"targetPort\":80}],\"selector\":{\"app\":\"nginx\"},\"type\":\"NodePort\"}}\n"},"name":"my-nodeport-nginx","namespace":"default"},"spec":{"ports":[{"name":"http","port":6080,"protocol":"TCP","targetPort":80}],"selector":{"app":"nginx"},"type":"NodePort"}}
+I0628 10:16:28.583345   10704 round_trippers.go:416] POST https://192.168.99.100:8443/api/v1/namespaces/default/services
+I0628 10:16:28.583358   10704 round_trippers.go:423] Request Headers:
+I0628 10:16:28.583365   10704 round_trippers.go:426]     Accept: application/json
+I0628 10:16:28.583371   10704 round_trippers.go:426]     Content-Type: application/json
+I0628 10:16:28.583377   10704 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:16:28.598756   10704 round_trippers.go:441] Response Status: 201 Created in 15 milliseconds
+I0628 10:16:28.598790   10704 round_trippers.go:444] Response Headers:
+I0628 10:16:28.598806   10704 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:46:28 GMT
+I0628 10:16:28.598821   10704 round_trippers.go:447]     Content-Type: application/json
+I0628 10:16:28.598834   10704 round_trippers.go:447]     Content-Length: 897
+I0628 10:16:28.598873   10704 request.go:947] Response Body: {"kind":"Service","apiVersion":"v1","metadata":{"name":"my-nodeport-nginx","namespace":"default","selfLink":"/api/v1/namespaces/default/services/my-nodeport-nginx","uid":"b13bbce1-995f-11e9-90cb-0800275cd445","resourceVersion":"696197","creationTimestamp":"2019-06-28T04:46:28Z","annotations":{"kubectl.kubernetes.io/last-applied-configuration":"{\"apiVersion\":\"v1\",\"kind\":\"Service\",\"metadata\":{\"annotations\":{},\"name\":\"my-nodeport-nginx\",\"namespace\":\"default\"},\"spec\":{\"ports\":[{\"name\":\"http\",\"port\":6080,\"protocol\":\"TCP\",\"targetPort\":80}],\"selector\":{\"app\":\"nginx\"},\"type\":\"NodePort\"}}\n"}},"spec":{"ports":[{"name":"http","protocol":"TCP","port":6080,"targetPort":80,"nodePort":31346}],"selector":{"app":"nginx"},"clusterIP":"10.97.173.105","type":"NodePort","sessionAffinity":"None","externalTrafficPolicy":"Cluster"},"status":{"loadBalancer":{}}}
+service/my-nodeport-nginx created
+paramanata@paramanata-OptiPlex-3020:~$ 
+
+
+
+aramanata@paramanata-OptiPlex-3020:~$ 
+paramanata@paramanata-OptiPlex-3020:~$ vi loadbalancer.yaml
+paramanata@paramanata-OptiPlex-3020:~$ 
+paramanata@paramanata-OptiPlex-3020:~$ 
+paramanata@paramanata-OptiPlex-3020:~$ 
+paramanata@paramanata-OptiPlex-3020:~$ kubectl apply -f loadbalancer.yaml --v=8
+I0628 10:17:07.106743   10768 loader.go:359] Config loaded from file:  /home/paramanata/.kube/config
+I0628 10:17:07.108642   10768 round_trippers.go:416] GET https://192.168.99.100:8443/openapi/v2?timeout=32s
+I0628 10:17:07.108659   10768 round_trippers.go:423] Request Headers:
+I0628 10:17:07.108666   10768 round_trippers.go:426]     Accept: application/com.github.proto-openapi.spec.v2@v1.0+protobuf
+I0628 10:17:07.108675   10768 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:17:07.121080   10768 round_trippers.go:441] Response Status: 200 OK in 12 milliseconds
+I0628 10:17:07.121098   10768 round_trippers.go:444] Response Headers:
+I0628 10:17:07.121105   10768 round_trippers.go:447]     X-Varied-Accept: application/com.github.proto-openapi.spec.v2@v1.0+protobuf
+I0628 10:17:07.121113   10768 round_trippers.go:447]     Accept-Ranges: bytes
+I0628 10:17:07.121128   10768 round_trippers.go:447]     Last-Modified: Thu, 20 Jun 2019 06:06:48 GMT
+I0628 10:17:07.121134   10768 round_trippers.go:447]     X-From-Cache: 1
+I0628 10:17:07.121141   10768 round_trippers.go:447]     Etag: "1D5713438F421F596E1A4E508FD3D2D469AA6C89D51E52228FD9DE246633C8A4A054457EF762EDE1BC57503EBCE1029915303BAFE856EC60CCA3A6E4A33EC9A9"
+I0628 10:17:07.121151   10768 round_trippers.go:447]     Vary: Accept-Encoding
+I0628 10:17:07.121157   10768 round_trippers.go:447]     Vary: Accept
+I0628 10:17:07.121163   10768 round_trippers.go:447]     Content-Type: application/octet-stream
+I0628 10:17:07.121175   10768 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:47:07 GMT
+I0628 10:17:07.266414   10768 request.go:945] Response Body:
+00000000  0a 03 32 2e 30 12 15 0a  0a 4b 75 62 65 72 6e 65  |..2.0....Kuberne|
+00000010  74 65 73 12 07 76 31 2e  31 30 2e 30 42 a2 a5 66  |tes..v1.10.0B..f|
+00000020  12 ca 02 0a 05 2f 61 70  69 2f 12 c0 02 12 bd 02  |...../api/......|
+00000030  0a 04 63 6f 72 65 1a 1a  67 65 74 20 61 76 61 69  |..core..get avai|
+00000040  6c 61 62 6c 65 20 41 50  49 20 76 65 72 73 69 6f  |lable API versio|
+00000050  6e 73 2a 12 67 65 74 43  6f 72 65 41 50 49 56 65  |ns*.getCoreAPIVe|
+00000060  72 73 69 6f 6e 73 32 10  61 70 70 6c 69 63 61 74  |rsions2.applicat|
+00000070  69 6f 6e 2f 6a 73 6f 6e  32 10 61 70 70 6c 69 63  |ion/json2.applic|
+00000080  61 74 69 6f 6e 2f 79 61  6d 6c 32 23 61 70 70 6c  |ation/yaml2#appl|
+00000090  69 63 61 74 69 6f 6e 2f  76 6e 64 2e 6b 75 62 65  |ication/vnd.kube|
+000000a0  72 6e 65 74 65 73 2e 70  72 6f 74 6f 62 75 66 3a  |rnetes.protobuf:|
+000000b0  10 61 70 70 6c 69 63 61  74 69 6f 6e 2f 6a 73 6f  |.application/jso|
+000000c0  6e 3a 10 61 70 70 6c 69  63 61 74 69 6f 6e 2f 79  |n:.application/ [truncated 11209233 chars]
+I0628 10:17:07.358424   10768 round_trippers.go:416] GET https://192.168.99.100:8443/api/v1/namespaces/demo/services/my-nginx-svc
+I0628 10:17:07.358443   10768 round_trippers.go:423] Request Headers:
+I0628 10:17:07.358447   10768 round_trippers.go:426]     Accept: application/json
+I0628 10:17:07.358451   10768 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:17:07.360602   10768 round_trippers.go:441] Response Status: 404 Not Found in 2 milliseconds
+I0628 10:17:07.360617   10768 round_trippers.go:444] Response Headers:
+I0628 10:17:07.360626   10768 round_trippers.go:447]     Content-Type: application/json
+I0628 10:17:07.360632   10768 round_trippers.go:447]     Content-Length: 200
+I0628 10:17:07.360660   10768 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:47:07 GMT
+I0628 10:17:07.360686   10768 request.go:947] Response Body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"services \"my-nginx-svc\" not found","reason":"NotFound","details":{"name":"my-nginx-svc","kind":"services"},"code":404}
+I0628 10:17:07.360901   10768 round_trippers.go:416] GET https://192.168.99.100:8443/api/v1/namespaces/demo
+I0628 10:17:07.360913   10768 round_trippers.go:423] Request Headers:
+I0628 10:17:07.360918   10768 round_trippers.go:426]     Accept: application/json
+I0628 10:17:07.360921   10768 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:17:07.362910   10768 round_trippers.go:441] Response Status: 200 OK in 1 milliseconds
+I0628 10:17:07.362926   10768 round_trippers.go:444] Response Headers:
+I0628 10:17:07.362933   10768 round_trippers.go:447]     Content-Type: application/json
+I0628 10:17:07.362938   10768 round_trippers.go:447]     Content-Length: 283
+I0628 10:17:07.362943   10768 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:47:07 GMT
+I0628 10:17:07.362960   10768 request.go:947] Response Body: {"kind":"Namespace","apiVersion":"v1","metadata":{"name":"demo","selfLink":"/api/v1/namespaces/demo","uid":"9fd0ae7c-9958-11e9-90cb-0800275cd445","resourceVersion":"692555","creationTimestamp":"2019-06-28T03:55:52Z"},"spec":{"finalizers":["kubernetes"]},"status":{"phase":"Active"}}
+I0628 10:17:07.363057   10768 request.go:947] Request Body: {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{"kubectl.kubernetes.io/last-applied-configuration":"{\"apiVersion\":\"v1\",\"kind\":\"Service\",\"metadata\":{\"annotations\":{},\"name\":\"my-nginx-svc\",\"namespace\":\"demo\"},\"spec\":{\"clusterIP\":\"1.2.3.4\",\"loadBalancerIP\":\"5.6.7.8\",\"ports\":[{\"port\":7080,\"protocol\":\"TCP\",\"targetPort\":90}],\"selector\":{\"app\":\"nginx\"},\"type\":\"LoadBalancer\"},\"status\":{\"loadBalancer\":{\"ingress\":[{\"ip\":\"11.22.33.44\"}]}}}\n"},"name":"my-nginx-svc","namespace":"demo"},"spec":{"clusterIP":"1.2.3.4","loadBalancerIP":"5.6.7.8","ports":[{"port":7080,"protocol":"TCP","targetPort":90}],"selector":{"app":"nginx"},"type":"LoadBalancer"},"status":{"loadBalancer":{"ingress":[{"ip":"11.22.33.44"}]}}}
+I0628 10:17:07.363086   10768 round_trippers.go:416] POST https://192.168.99.100:8443/api/v1/namespaces/demo/services
+I0628 10:17:07.363093   10768 round_trippers.go:423] Request Headers:
+I0628 10:17:07.363100   10768 round_trippers.go:426]     Content-Type: application/json
+I0628 10:17:07.363106   10768 round_trippers.go:426]     Accept: application/json
+I0628 10:17:07.363112   10768 round_trippers.go:426]     User-Agent: kubectl/v1.15.0 (linux/amd64) kubernetes/e8462b5
+I0628 10:17:07.364411   10768 round_trippers.go:441] Response Status: 422 Unprocessable Entity in 1 milliseconds
+I0628 10:17:07.364423   10768 round_trippers.go:444] Response Headers:
+I0628 10:17:07.364429   10768 round_trippers.go:447]     Content-Type: application/json
+I0628 10:17:07.364440   10768 round_trippers.go:447]     Content-Length: 506
+I0628 10:17:07.364446   10768 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:47:07 GMT
+I0628 10:17:07.364467   10768 request.go:947] Response Body: {"kind":"Status","apiVersion":"v1","metadata":{},"status":"Failure","message":"Service \"my-nginx-svc\" is invalid: spec.clusterIP: Invalid value: \"1.2.3.4\": provided IP is not in the valid range. The range of valid IPs is 10.96.0.0/12","reason":"Invalid","details":{"name":"my-nginx-svc","kind":"Service","causes":[{"reason":"FieldValueInvalid","message":"Invalid value: \"1.2.3.4\": provided IP is not in the valid range. The range of valid IPs is 10.96.0.0/12","field":"spec.clusterIP"}]},"code":422}
+F0628 10:17:07.364593   10768 helpers.go:114] The Service "my-nginx-svc" is invalid: spec.clusterIP: Invalid value: "1.2.3.4": provided IP is not in the valid range. The range of valid IPs is 10.96.0.0/12
+paramanata@paramanata-OptiPlex-3020:~$ 

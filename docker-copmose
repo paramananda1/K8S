@@ -1,0 +1,18 @@
+sudo apt install docker-compose
+ 
+ docker-compose.yml : is the file listed all the service like (web, database, messageing)
+ 
+ ====================================
+  docker-compose.yml ->
+ ================================ 
+  services:
+				web:
+					image: "paramanandapati/webimage"
+				database: 
+					image: "mongodb
+				messageing:
+					image: "redis:alpin"
+					
+===================================
+docker-compose up
+				

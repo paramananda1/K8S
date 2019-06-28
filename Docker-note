@@ -1,0 +1,230 @@
+https://hub.docker.com/signup
+Docker ID :paramanandapati   : pass: maakali@123
+
+https://docs.docker.com/signup
+maakali
+
+run docker with a os/container or id ( centos/ubuntu/nodjs ..) -> enter into os/container -> write your code and pack it
+paramanata@paramanata-OptiPlex-3020:~$ sudo docker run -it centos bash
+[root@d255cc9e5886 /]# exit
+exit
+
+
+paramanata@paramanata-OptiPlex-3020:~$ sudo docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+ubuntu              latest              7698f282e524        4 weeks ago         69.9MB
+centos              latest              9f38484d220f        3 months ago        202MB
+hello-world         latest              fce289e99eb9        5 months ago        1.84kB
+paramanata@paramanata-OptiPlex-3020:~$ 
+
+
+===========================================
+Install Docker on Ubuntu Using Default Repositories  ( https://docs.docker.com/install/linux/docker-ce/ubuntu/) 
+sudo apt-get update
+
+Step 2: Uninstall Old Versions of Docker
+
+sudo apt-get remove docker docker-engine docker.io
+
+Step 3: Install Docker
+sudo apt-get install    apt-transport-https   ca-certificates   curl  gnupg-agent  software-properties-common
+
+Add Docker’s official GPG key:
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo apt-key fingerprint 0EBFCD88
+
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+   
+  sudo apt-get update
+  
+sudo apt install docker.io
+
+Step 4: Start and Automate Docker
+
+sudo systemctl start docker
+
+sudo systemctl enable docker
+
+===========================================================
+paramanata@paramanata-OptiPlex-3020:~$ cat /etc/*release*  >>>>>>>>>>>>>>>>>>>>>>>>>>>>host version
+DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=16.04
+DISTRIB_CODENAME=xenial
+DISTRIB_DESCRIPTION="Ubuntu 16.04.6 LTS"
+NAME="Ubuntu"
+VERSION="16.04.6 LTS (Xenial Xerus)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 16.04.6 LTS"
+VERSION_ID="16.04"
+HOME_URL="http://www.ubuntu.com/"
+SUPPORT_URL="http://help.ubuntu.com/"
+BUG_REPORT_URL="http://bugs.launchpad.net/ubuntu/"
+VERSION_CODENAME=xenial
+UBUNTU_CODENAME=xenial
+paramanata@paramanata-OptiPlex-3020:~$
+paramanata@paramanata-OptiPlex-3020:~$ ps -a
+  PID TTY          TIME CMD
+10506 pts/0    00:00:44 chrome
+10511 pts/0    00:00:00 cat
+10512 pts/0    00:00:00 cat
+10515 pts/0    00:00:00 chrome
+10517 pts/0    00:00:00 nacl_helper
+10521 pts/0    00:00:00 chrome
+10542 pts/0    00:03:18 chrome
+10547 pts/0    00:00:10 chrome
+10581 pts/0    00:00:00 chrome
+10728 pts/0    00:06:47 chrome
+10752 pts/0    00:00:02 chrome
+10801 pts/0    00:00:07 chrome
+11491 pts/0    00:00:00 chrome
+11525 pts/0    00:00:04 chrome
+15695 pts/0    00:00:00 ps
+
+
+
+paramanata@paramanata-OptiPlex-3020:~$ sudo docker run -it ubuntu bash 
+Unable to find image 'ubuntu:latest' locally
+latest: Pulling from library/ubuntu
+6abc03819f3e: Pull complete 
+05731e63f211: Pull complete 
+0bd67c50d6be: Pull complete 
+Digest: sha256:f08638ec7ddc90065187e7eabdfac3c96e5ff0f6b2f1762cf31a4f49b53000a5
+Status: Downloaded newer image for ubuntu:latest
+root@eb49c9449584:/#   -----------------------------------> in side of contenor 
+
+paramanata@paramanata-OptiPlex-3020:~$ sudo docker run -it ubuntu bash        
+root@7852c3a6d462:/# 
+root@7852c3a6d462:/# 
+root@7852c3a6d462:/# cat /etc/*release*  >>>>>>>>>>>>>>>>>>>>>>>.bash container version
+DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=18.04
+DISTRIB_CODENAME=bionic
+DISTRIB_DESCRIPTION="Ubuntu 18.04.2 LTS"
+NAME="Ubuntu"
+VERSION="18.04.2 LTS (Bionic Beaver)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 18.04.2 LTS"
+VERSION_ID="18.04"
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+VERSION_CODENAME=bionic
+UBUNTU_CODENAME=bionic
+root@7852c3a6d462:/# 
+r
+oot@7852c3a6d462:/# ps -a
+  PID TTY          TIME CMD
+   11 pts/0    00:00:00 ps
+root@7852c3a6d462:/# 
+
+
+
+
+paramanata@paramanata-OptiPlex-3020:~$ sudo docker run -it centos bash
+[root@d255cc9e5886 /]# 
+
+
+=========================================================
+ 
+ Docker Commands:
+ ===============
+ 
+    docker run – Runs a command in a new container.
+    docker start – Starts one or more stopped containers
+    docker stop – Stops one or more running containers
+    docker build – Builds an image form a Docker file
+    docker pull – Pulls an image or a repository from a registry
+    docker push – Pushes an image or a repository to a registry
+    docker export – Exports a container’s filesystem as a tar archive
+    docker exec – Runs a command in a run-time container  ( docker exec d255cc9e5886 cat /etc/*release* )  cat the file on centos
+    docker search – Searches the Docker Hub for images
+    docker attach – Attaches to a running container
+    docker commit – Creates a new image from a container’s changes
+	docker ps 
+	docker rm  <container name>  - remove container
+	docker rmi <image name >   --remove image 
+
+My test:
+========
+paramanata@paramanata-OptiPlex-3020:~$ 
+paramanata@paramanata-OptiPlex-3020:~$ sudo systemctl start docker
+paramanata@paramanata-OptiPlex-3020:~$ sudo systemctl enable docker
+Synchronizing state of docker.service with SysV init with /lib/systemd/systemd-sysv-install...
+Executing /lib/systemd/systemd-sysv-install enable docker
+paramanata@paramanata-OptiPlex-3020:~$ sudo docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+paramanata@paramanata-OptiPlex-3020:~$ 
+paramanata@paramanata-OptiPlex-3020:~$ sudo docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+paramanata@paramanata-OptiPlex-3020:~$ 
+
+
+
+paramanata@paramanata-OptiPlex-3020:~$ sudo docker run hello-world                >>> running hello-world image
+Unable to find image 'hello-world:latest' locally	                                                   >>> checking in local first and unable to get it
+latest: Pulling from library/hello-world                                                                  >>> unableto get in local so pulling from repository
+1b930d010525: Pull complete 
+Digest: sha256:41a65640635299bab090f783209c1e3a3f11934cf7756b09cb2f1e02147c6ed8
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+paramanata@paramanata-OptiPlex-3020:~$ 
+
+
+paramanata@paramanata-OptiPlex-3020:~$ sudo docker images
+[sudo] password for paramanata: 
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+hello-world         latest              fce289e99eb9        5 months ago        1.84kB
+paramanata@paramanata-OptiPlex-3020:~$ 
+
+paramanata@paramanata-OptiPlex-3020:~$ sudo docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                      PORTS               NAMES
+ffcb6f3b8b71        hello-world         "/hello"            14 seconds ago      Exited (0) 12 seconds ago                       boring_galileo
+21ad40be83ce        hello-world         "/hello"            19 minutes ago      Exited (0) 19 minutes ago                       sleepy_montalcini
+paramanata@paramanata-OptiPlex-3020:~$ 
+
+
+
+
+==================================================
+
+
+docker run -i -t --name geeklab centos:7 /bin/bash
+[root@873abc18f59d /]# yum install gcc
+[root@873abc18f59d /]# vi test.c
+[root@873abc18f59d /]# gcc test.c
+exit
+
+docker commit -m="CentOS 7 With httpd installed" -a "Geek Lab" geeklab centos7/httpd:v1
+sha256:b3c42dd36e247cabcfaf134afb4765e9853ebfbe856c8d785f65cfafc9fd53cd
+
+port map and save and agane run for contener:
+
+sudo docker run -p 8080:8080 -v /home/paramanata/docker-test:/var/jenkins_home jenkins

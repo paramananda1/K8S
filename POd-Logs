@@ -1,0 +1,337 @@
+paramanata@paramanata-OptiPlex-3020:~$ kubectl get pods
+NAME                              READY   STATUS             RESTARTS   AGE
+day                               0/1     CrashLoopBackOff   1947       7d
+day1                              1/1     Running            1468       8d
+day1-b9688f668-6t564              1/1     Running            3          8d
+go-day1-5688665dff-j74sj          0/1     CrashLoopBackOff   1960       8d
+hello-minikube-7c77b68cff-hc8l2   1/1     Running            2          8d
+test                              1/1     Running            2          8d
+paramanata@paramanata-OptiPlex-3020:~$ kubectl cluster-info
+Kubernetes master is running at https://192.168.99.100:8443
+KubeDNS is running at https://192.168.99.100:8443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+paramanata@paramanata-OptiPlex-3020:~$ 
+paramanata@paramanata-OptiPlex-3020:~$ kubectl get nodes
+NAME       STATUS   ROLES    AGE   VERSION
+minikube   Ready    master   8d    v1.10.0
+paramanata@paramanata-OptiPlex-3020:~$ 
+
+
+paramanata@paramanata-OptiPlex-3020:~$ kubectl run kubernetes-bootcamp --image=gcr.io/google-samples/kubernetes-bootcamp:v1 --port=8080
+kubectl run --generator=deployment/apps.v1 is DEPRECATED and will be removed in a future version. Use kubectl run --generator=run-pod/v1 or kubectl create instead.
+deployment.apps/kubernetes-bootcamp created
+
+
+paramanata@paramanata-OptiPlex-3020:~$ kubectl get deployments
+NAME                  DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+day1                  1         1         1            1           8d
+go-day1               1         1         1            0           8d
+hello-minikube        1         1         1            1           8d
+kubernetes-bootcamp   1         1         1            1           50s
+paramanata@paramanata-OptiPlex-3020:~$ 
+
+
+paramanata@paramanata-OptiPlex-3020:~$ echo -e "\n\n\n\e[92mStarting Proxy. After starting it will not output a response. Please click the first Terminal Tab\n"; kubectl proxy
+
+
+
+Starting Proxy. After starting it will not output a response. Please click the first Terminal Tab
+
+Starting to serve on 127.0.0.1:8001
+
+
+
+echo Name of the Pod: $POD_NAME
+Name of the Pod: day day1 day1-b9688f668-6t564 go-day1-5688665dff-j74sj hello-minikube-7c77b68cff-hc8l2 kubernetes-bootcamp-5c69669756-qkw2q test
+paramanata@paramanata-OptiPlex-3020:~$ 
+
+
+paramanata@paramanata-OptiPlex-3020:~$ kubectl get ns
+NAME          STATUS   AGE
+default       Active   8d
+kube-public   Active   8d
+kube-system   Active   8d
+paramanata@paramanata-OptiPlex-3020:~$ kubectl create ns demo
+namespace/demo created
+paramanata@paramanata-OptiPlex-3020:~$ 
+paramanata@paramanata-OptiPlex-3020:~$ 
+paramanata@paramanata-OptiPlex-3020:~$ kubectl get ns
+NAME          STATUS   AGE
+default       Active   8d
+demo          Active   5s
+kube-public   Active   8d
+kube-system   Active   8d
+paramanata@paramanata-OptiPlex-3020:~$
+
+
+paramanata@paramanata-OptiPlex-3020:~$ kubectl apply -f test_k8s_day1.yaml --v=8
+I0628 09:30:34.570070    5479 loader.go:359] Config loaded from file /home/paramanata/.kube/config
+I0628 09:30:34.570894    5479 round_trippers.go:416] GET https://192.168.99.100:8443/openapi/v2?timeout=32s
+I0628 09:30:34.570902    5479 round_trippers.go:423] Request Headers:
+I0628 09:30:34.570906    5479 round_trippers.go:426]     Accept: application/com.github.proto-openapi.spec.v2@v1.0+protobuf
+I0628 09:30:34.570910    5479 round_trippers.go:426]     User-Agent: kubectl/v1.14.3 (linux/amd64) kubernetes/5e53fd6
+I0628 09:30:34.583066    5479 round_trippers.go:441] Response Status: 200 OK in 12 milliseconds
+I0628 09:30:34.583079    5479 round_trippers.go:444] Response Headers:
+I0628 09:30:34.583085    5479 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:00:34 GMT
+I0628 09:30:34.583090    5479 round_trippers.go:447]     Etag: "1D5713438F421F596E1A4E508FD3D2D469AA6C89D51E52228FD9DE246633C8A4A054457EF762EDE1BC57503EBCE1029915303BAFE856EC60CCA3A6E4A33EC9A9"
+I0628 09:30:34.583094    5479 round_trippers.go:447]     Last-Modified: Thu, 20 Jun 2019 06:06:48 GMT
+I0628 09:30:34.583098    5479 round_trippers.go:447]     X-From-Cache: 1
+I0628 09:30:34.583102    5479 round_trippers.go:447]     Accept-Ranges: bytes
+I0628 09:30:34.583106    5479 round_trippers.go:447]     Content-Type: application/octet-stream
+I0628 09:30:34.583111    5479 round_trippers.go:447]     Vary: Accept-Encoding
+I0628 09:30:34.583116    5479 round_trippers.go:447]     Vary: Accept
+I0628 09:30:34.583121    5479 round_trippers.go:447]     X-Varied-Accept: application/com.github.proto-openapi.spec.v2@v1.0+protobuf
+I0628 09:30:34.724448    5479 request.go:940] Response Body:
+00000000  0a 03 32 2e 30 12 15 0a  0a 4b 75 62 65 72 6e 65  |..2.0....Kuberne|
+00000010  74 65 73 12 07 76 31 2e  31 30 2e 30 42 a2 a5 66  |tes..v1.10.0B..f|
+00000020  12 ca 02 0a 05 2f 61 70  69 2f 12 c0 02 12 bd 02  |...../api/......|
+00000030  0a 04 63 6f 72 65 1a 1a  67 65 74 20 61 76 61 69  |..core..get avai|
+00000040  6c 61 62 6c 65 20 41 50  49 20 76 65 72 73 69 6f  |lable API versio|
+00000050  6e 73 2a 12 67 65 74 43  6f 72 65 41 50 49 56 65  |ns*.getCoreAPIVe|
+00000060  72 73 69 6f 6e 73 32 10  61 70 70 6c 69 63 61 74  |rsions2.applicat|
+00000070  69 6f 6e 2f 6a 73 6f 6e  32 10 61 70 70 6c 69 63  |ion/json2.applic|
+00000080  61 74 69 6f 6e 2f 79 61  6d 6c 32 23 61 70 70 6c  |ation/yaml2#appl|
+00000090  69 63 61 74 69 6f 6e 2f  76 6e 64 2e 6b 75 62 65  |ication/vnd.kube|
+000000a0  72 6e 65 74 65 73 2e 70  72 6f 74 6f 62 75 66 3a  |rnetes.protobuf:|
+000000b0  10 61 70 70 6c 69 63 61  74 69 6f 6e 2f 6a 73 6f  |.application/jso|
+000000c0  6e 3a 10 61 70 70 6c 69  63 61 74 69 6f 6e 2f 79  |n:.application/ [truncated 11209233 chars]
+I0628 09:30:34.821528    5479 round_trippers.go:416] GET https://192.168.99.100:8443/api/v1/namespaces/default/pods/day
+I0628 09:30:34.821547    5479 round_trippers.go:423] Request Headers:
+I0628 09:30:34.821554    5479 round_trippers.go:426]     Accept: application/json
+I0628 09:30:34.821560    5479 round_trippers.go:426]     User-Agent: kubectl/v1.14.3 (linux/amd64) kubernetes/5e53fd6
+I0628 09:30:34.824596    5479 round_trippers.go:441] Response Status: 200 OK in 3 milliseconds
+I0628 09:30:34.824632    5479 round_trippers.go:444] Response Headers:
+I0628 09:30:34.824643    5479 round_trippers.go:447]     Content-Type: application/json
+I0628 09:30:34.824701    5479 round_trippers.go:447]     Content-Length: 2665
+I0628 09:30:34.824754    5479 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:00:34 GMT
+I0628 09:30:34.824851    5479 request.go:942] Response Body: {"kind":"Pod","apiVersion":"v1","metadata":{"name":"day","namespace":"default","selfLink":"/api/v1/namespaces/default/pods/day","uid":"c8a7567c-9321-11e9-ad77-0800275cd445","resourceVersion":"692729","creationTimestamp":"2019-06-20T06:08:12Z","annotations":{"kubectl.kubernetes.io/last-applied-configuration":"{\"apiVersion\":\"v1\",\"kind\":\"Pod\",\"metadata\":{\"annotations\":{},\"name\":\"day\",\"namespace\":\"default\"},\"spec\":{\"containers\":[{\"image\":\"paramanandapati/go-day1\",\"name\":\"go-day1\"}]}}\n"}},"spec":{"volumes":[{"name":"default-token-tctqj","secret":{"secretName":"default-token-tctqj","defaultMode":420}}],"containers":[{"name":"go-day1","image":"paramanandapati/go-day1","resources":{},"volumeMounts":[{"name":"default-token-tctqj","readOnly":true,"mountPath":"/var/run/secrets/kubernetes.io/serviceaccount"}],"terminationMessagePath":"/dev/termination-log","terminationMessagePolicy":"File","imagePullPolicy":"Always"}],"restartPolicy":"Always","terminationGracePeriodSeconds":30,"dnsPolicy" [truncated 1641 chars]
+I0628 09:30:34.825455    5479 request.go:942] Request Body: {"metadata":{"annotations":{"kubectl.kubernetes.io/last-applied-configuration":"{\"apiVersion\":\"v1\",\"kind\":\"Pod\",\"metadata\":{\"annotations\":{},\"name\":\"day\",\"namespace\":\"default\"},\"spec\":{\"containers\":[{\"image\":\"paramanandapati/day3\",\"name\":\"go-day1\"}]}}\n"}},"spec":{"$setElementOrder/containers":[{"name":"go-day1"}],"containers":[{"image":"paramanandapati/day3","name":"go-day1"}]}}
+I0628 09:30:34.825575    5479 round_trippers.go:416] PATCH https://192.168.99.100:8443/api/v1/namespaces/default/pods/day
+I0628 09:30:34.825633    5479 round_trippers.go:423] Request Headers:
+I0628 09:30:34.825684    5479 round_trippers.go:426]     Accept: application/json
+I0628 09:30:34.825734    5479 round_trippers.go:426]     Content-Type: application/strategic-merge-patch+json
+I0628 09:30:34.825781    5479 round_trippers.go:426]     User-Agent: kubectl/v1.14.3 (linux/amd64) kubernetes/5e53fd6
+I0628 09:30:34.844610    5479 round_trippers.go:441] Response Status: 200 OK in 18 milliseconds
+I0628 09:30:34.844632    5479 round_trippers.go:444] Response Headers:
+I0628 09:30:34.844641    5479 round_trippers.go:447]     Content-Type: application/json
+I0628 09:30:34.844647    5479 round_trippers.go:447]     Content-Length: 2659
+I0628 09:30:34.844653    5479 round_trippers.go:447]     Date: Fri, 28 Jun 2019 04:00:34 GMT
+I0628 09:30:34.844691    5479 request.go:942] Response Body: {"kind":"Pod","apiVersion":"v1","metadata":{"name":"day","namespace":"default","selfLink":"/api/v1/namespaces/default/pods/day","uid":"c8a7567c-9321-11e9-ad77-0800275cd445","resourceVersion":"692882","creationTimestamp":"2019-06-20T06:08:12Z","annotations":{"kubectl.kubernetes.io/last-applied-configuration":"{\"apiVersion\":\"v1\",\"kind\":\"Pod\",\"metadata\":{\"annotations\":{},\"name\":\"day\",\"namespace\":\"default\"},\"spec\":{\"containers\":[{\"image\":\"paramanandapati/day3\",\"name\":\"go-day1\"}]}}\n"}},"spec":{"volumes":[{"name":"default-token-tctqj","secret":{"secretName":"default-token-tctqj","defaultMode":420}}],"containers":[{"name":"go-day1","image":"paramanandapati/day3","resources":{},"volumeMounts":[{"name":"default-token-tctqj","readOnly":true,"mountPath":"/var/run/secrets/kubernetes.io/serviceaccount"}],"terminationMessagePath":"/dev/termination-log","terminationMessagePolicy":"File","imagePullPolicy":"Always"}],"restartPolicy":"Always","terminationGracePeriodSeconds":30,"dnsPolicy":"Clus [truncated 1635 chars]
+pod/day configured
+paramanata@paramanata-OptiPlex-3020:~$ 
+
+
+paramanata@paramanata-OptiPlex-3020:~$ kubectl describe pod day3
+Name:         day3
+Namespace:    default
+Node:         minikube/10.0.2.15
+Start Time:   Fri, 28 Jun 2019 09:36:54 +0530
+Labels:       <none>
+Annotations:  kubectl.kubernetes.io/last-applied-configuration:
+                {"apiVersion":"v1","kind":"Pod","metadata":{"annotations":{},"name":"day3","namespace":"default"},"spec":{"containers":[{"image":"paramana...
+Status:       Running
+IP:           172.17.0.11
+Containers:
+  go-day1:
+    Container ID:   docker://9d8978269cf66432515445b7eff6ff25e6bf246a00fe01107f2043dc65c51ea6
+    Image:          paramanandapati/day3
+    Image ID:       docker-pullable://paramanandapati/day3@sha256:67cfa1e98f1513967383fb36a3689f81234c571561749565238eab60dc15bd7d
+    Port:           <none>
+    Host Port:      <none>
+    State:          Terminated
+      Reason:       Completed
+      Exit Code:    0
+      Started:      Fri, 28 Jun 2019 09:37:49 +0530
+      Finished:     Fri, 28 Jun 2019 09:37:49 +0530
+    Last State:     Terminated
+      Reason:       Completed
+      Exit Code:    0
+      Started:      Fri, 28 Jun 2019 09:37:18 +0530
+      Finished:     Fri, 28 Jun 2019 09:37:18 +0530
+    Ready:          False
+    Restart Count:  3
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-tctqj (ro)
+Conditions:
+  Type           Status
+  Initialized    True 
+  Ready          False 
+  PodScheduled   True 
+Volumes:
+  default-token-tctqj:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-tctqj
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:
+  Type     Reason                 Age               From               Message
+  ----     ------                 ----              ----               -------
+  Normal   Scheduled              58s               default-scheduler  Successfully assigned day3 to minikube
+  Normal   SuccessfulMountVolume  58s               kubelet, minikube  MountVolume.SetUp succeeded for volume "default-token-tctqj"
+  Normal   Pulling                5s (x4 over 57s)  kubelet, minikube  pulling image "paramanandapati/day3"
+  Normal   Pulled                 3s (x4 over 55s)  kubelet, minikube  Successfully pulled image "paramanandapati/day3"
+  Normal   Created                3s (x4 over 55s)  kubelet, minikube  Created container
+  Normal   Started                3s (x4 over 54s)  kubelet, minikube  Started container
+  Warning  BackOff                2s (x5 over 49s)  kubelet, minikube  Back-off restarting failed container
+paramanata@paramanata-OptiPlex-3020:~$ 
+
+
+
+
+paramanata@paramanata-OptiPlex-3020:~$ kubectl describe node minikube
+Name:               minikube
+Roles:              master
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/os=linux
+                    kubernetes.io/hostname=minikube
+                    node-role.kubernetes.io/master=
+Annotations:        node.alpha.kubernetes.io/ttl: 0
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Wed, 19 Jun 2019 15:59:30 +0530
+Taints:             <none>
+Unschedulable:      false
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  OutOfDisk        False   Fri, 28 Jun 2019 09:40:30 +0530   Wed, 19 Jun 2019 15:59:30 +0530   KubeletHasSufficientDisk     kubelet has sufficient disk space available
+  MemoryPressure   False   Fri, 28 Jun 2019 09:40:30 +0530   Wed, 19 Jun 2019 15:59:30 +0530   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Fri, 28 Jun 2019 09:40:30 +0530   Wed, 19 Jun 2019 15:59:30 +0530   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Fri, 28 Jun 2019 09:40:30 +0530   Wed, 19 Jun 2019 15:59:30 +0530   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Fri, 28 Jun 2019 09:40:30 +0530   Wed, 19 Jun 2019 15:59:30 +0530   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:  10.0.2.15
+  Hostname:    minikube
+Capacity:
+ cpu:                2
+ ephemeral-storage:  16888216Ki
+ hugepages-2Mi:      0
+ memory:             2038624Ki
+ pods:               110
+Allocatable:
+ cpu:                2
+ ephemeral-storage:  15564179840
+ hugepages-2Mi:      0
+ memory:             1936224Ki
+ pods:               110
+System Info:
+ Machine ID:                 61a01e54c97442cfbec6a5356f960f26
+ System UUID:                F9609428-67BA-4592-8E67-C500D87E2AF2
+ Boot ID:                    71ad75d9-021f-42aa-a1c6-5ebb3a968b04
+ Kernel Version:             4.15.0
+ OS Image:                   Buildroot 2018.05
+ Operating System:           linux
+ Architecture:               amd64
+ Container Runtime Version:  docker://17.12.1-ce
+ Kubelet Version:            v1.10.0
+ Kube-Proxy Version:         v1.10.0
+Non-terminated Pods:         (18 in total)
+  Namespace                  Name                                     CPU Requests  CPU Limits  Memory Requests  Memory Limits  AGE
+  ---------                  ----                                     ------------  ----------  ---------------  -------------  ---
+  default                    day                                      0 (0%)        0 (0%)      0 (0%)           0 (0%)         7d22h
+  default                    day1                                     0 (0%)        0 (0%)      0 (0%)           0 (0%)         8d
+  default                    day1-b9688f668-6t564                     0 (0%)        0 (0%)      0 (0%)           0 (0%)         8d
+  default                    day3                                     0 (0%)        0 (0%)      0 (0%)           0 (0%)         3m40s
+  default                    go-day1-5688665dff-j74sj                 0 (0%)        0 (0%)      0 (0%)           0 (0%)         8d
+  default                    hello-minikube-7c77b68cff-hc8l2          0 (0%)        0 (0%)      0 (0%)           0 (0%)         8d
+  default                    kubernetes-bootcamp-5c69669756-qkw2q     0 (0%)        0 (0%)      0 (0%)           0 (0%)         37m
+  default                    test                                     0 (0%)        0 (0%)      0 (0%)           0 (0%)         8d
+  demo                       day3                                     0 (0%)        0 (0%)      0 (0%)           0 (0%)         8s
+  kube-system                etcd-minikube                            0 (0%)        0 (0%)      0 (0%)           0 (0%)         18m
+  kube-system                kube-addon-manager-minikube              5m (0%)       0 (0%)      50Mi (2%)        0 (0%)         8d
+  kube-system                kube-apiserver-minikube                  250m (12%)    0 (0%)      0 (0%)           0 (0%)         18m
+  kube-system                kube-controller-manager-minikube         200m (10%)    0 (0%)      0 (0%)           0 (0%)         18m
+  kube-system                kube-dns-86f4d74b45-rj98b                260m (13%)    0 (0%)      110Mi (5%)       170Mi (8%)     8d
+  kube-system                kube-proxy-6nv85                         0 (0%)        0 (0%)      0 (0%)           0 (0%)         18m
+  kube-system                kube-scheduler-minikube                  100m (5%)     0 (0%)      0 (0%)           0 (0%)         17h
+  kube-system                kubernetes-dashboard-5498ccf677-ddvzx    0 (0%)        0 (0%)      0 (0%)           0 (0%)         8d
+  kube-system                storage-provisioner                      0 (0%)        0 (0%)      0 (0%)           0 (0%)         8d
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests    Limits
+  --------           --------    ------
+  cpu                815m (40%)  0 (0%)
+  memory             160Mi (8%)  170Mi (8%)
+  ephemeral-storage  0 (0%)      0 (0%)
+Events:
+  Type    Reason                   Age                From               Message
+  ----    ------                   ----               ----               -------
+  Normal  Starting                 19m                kubelet, minikube  Starting kubelet.
+  Normal  NodeHasSufficientPID     19m (x5 over 19m)  kubelet, minikube  Node minikube status is now: NodeHasSufficientPID
+  Normal  NodeAllocatableEnforced  19m                kubelet, minikube  Updated Node Allocatable limit across pods
+  Normal  NodeHasSufficientDisk    19m (x6 over 19m)  kubelet, minikube  Node minikube status is now: NodeHasSufficientDisk
+  Normal  NodeHasSufficientMemory  19m (x6 over 19m)  kubelet, minikube  Node minikube status is now: NodeHasSufficientMemory
+  Normal  NodeHasNoDiskPressure    19m (x6 over 19m)  kubelet, minikube  Node minikube status is now: NodeHasNoDiskPressure
+paramanata@paramanata-OptiPlex-3020:~$ 
+
+
+
+paramanata@paramanata-OptiPlex-3020:~$ journalctl -xe
+Jun 28 09:50:36 paramanata-OptiPlex-3020 kubelet[8607]: F0628 09:50:36.609114    8607 server.go:198] failed to load Kubelet config file /var/lib/kubelet/config.yaml, error failed to read kubelet config fi
+Jun 28 09:50:36 paramanata-OptiPlex-3020 systemd[1]: kubelet.service: Main process exited, code=exited, status=255/n/a
+Jun 28 09:50:36 paramanata-OptiPlex-3020 systemd[1]: kubelet.service: Unit entered failed state.
+Jun 28 09:50:36 paramanata-OptiPlex-3020 systemd[1]: kubelet.service: Failed with result 'exit-code'.
+Jun 28 09:50:46 paramanata-OptiPlex-3020 systemd[1]: kubelet.service: Service hold-off time over, scheduling restart.
+Jun 28 09:50:46 paramanata-OptiPlex-3020 systemd[1]: Stopped kubelet: The Kubernetes Node Agent.
+-- Subject: Unit kubelet.service has finished shutting down
+-- Defined-By: systemd
+-- Support: http://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit kubelet.service has finished shutting down.
+Jun 28 09:50:46 paramanata-OptiPlex-3020 systemd[1]: Started kubelet: The Kubernetes Node Agent.
+-- Subject: Unit kubelet.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit kubelet.service has finished starting up.
+-- 
+-- The start-up result is done.
+Jun 28 09:50:46 paramanata-OptiPlex-3020 kubelet[8618]: F0628 09:50:46.876277    8618 server.go:198] failed to load Kubelet config file /var/lib/kubelet/config.yaml, error failed to read kubelet config fi
+Jun 28 09:50:46 paramanata-OptiPlex-3020 systemd[1]: kubelet.service: Main process exited, code=exited, status=255/n/a
+Jun 28 09:50:46 paramanata-OptiPlex-3020 systemd[1]: kubelet.service: Unit entered failed state.
+Jun 28 09:50:46 paramanata-OptiPlex-3020 systemd[1]: kubelet.service: Failed with result 'exit-code'.
+Jun 28 09:50:57 paramanata-OptiPlex-3020 systemd[1]: kubelet.service: Service hold-off time over, scheduling restart.
+Jun 28 09:50:57 paramanata-OptiPlex-3020 systemd[1]: Stopped kubelet: The Kubernetes Node Agent.
+-- Subject: Unit kubelet.service has finished shutting down
+-- Defined-By: systemd
+-- Support: http://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit kubelet.service has finished shutting down.
+Jun 28 09:50:57 paramanata-OptiPlex-3020 systemd[1]: Started kubelet: The Kubernetes Node Agent.
+-- Subject: Unit kubelet.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit kubelet.service has finished starting up.
+-- 
+-- The start-up result is done.
+Jun 28 09:50:57 paramanata-OptiPlex-3020 kubelet[8629]: F0628 09:50:57.107618    8629 server.go:198] failed to load Kubelet config file /var/lib/kubelet/config.yaml, error failed to read kubelet config fi
+Jun 28 09:50:57 paramanata-OptiPlex-3020 systemd[1]: kubelet.service: Main process exited, code=exited, status=255/n/a
+Jun 28 09:50:57 paramanata-OptiPlex-3020 systemd[1]: kubelet.service: Unit entered failed state.
+Jun 28 09:50:57 paramanata-OptiPlex-3020 systemd[1]: kubelet.service: Failed with result 'exit-code'.
+Jun 28 09:51:07 paramanata-OptiPlex-3020 systemd[1]: kubelet.service: Service hold-off time over, scheduling restart.
+Jun 28 09:51:07 paramanata-OptiPlex-3020 systemd[1]: Stopped kubelet: The Kubernetes Node Agent.
+-- Subject: Unit kubelet.service has finished shutting down
+-- Defined-By: systemd
+-- Support: http://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit kubelet.service has finished shutting down.
+Jun 28 09:51:07 paramanata-OptiPlex-3020 systemd[1]: Started kubelet: The Kubernetes Node Agent.
+-- Subject: Unit kubelet.service has finished start-up
+-- Defined-By: systemd
+-- Support: http://lists.freedesktop.org/mailman/listinfo/systemd-devel
+-- 
+-- Unit kubelet.service has finished starting up.
+-- 
+-- The start-up result is done.
+Jun 28 09:51:07 paramanata-OptiPlex-3020 kubelet[8639]: F0628 09:51:07.363048    8639 server.go:198] failed to load Kubelet config file /var/lib/kubelet/config.yaml, error failed to read kubelet config fi
+Jun 28 09:51:07 paramanata-OptiPlex-3020 systemd[1]: kubelet.service: Main process exited, code=exited, status=255/n/a
+Jun 28 09:51:07 paramanata-OptiPlex-3020 systemd[1]: kubelet.service: Unit entered failed state.
+Jun 28 09:51:07 paramanata-OptiPlex-3020 systemd[1]: kubelet.service: Failed with result 'exit-code'.
+paramanata@paramanata-OptiPlex-3020:~$ 
+
+

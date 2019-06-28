@@ -1,0 +1,26 @@
+ 
+ Goals
+  cluster will include the following physical resources: 
+  One master node  ( The master node (a node in Kubernetes refers to a server) is responsible for managing the state of the cluster. It runs Etcd, which stores cluster data among components that schedule workloads to worker nodes.)
+  
+ Two worker nodes
+ 
+ 
+ Generate ssh key pair to comunicate between nodes
+ ==========================================
+ https://www.digitalocean.com/community/tutorials/ssh-essentials-working-with-ssh-servers-clients-and-keys#generating-and-working-with-ssh-keys
+ ssh-keygen  Enter  Enter Enter Enter
+ Now RSA key created:
+ ~/.ssh/id_rsa: The private key. DO NOT SHARE THIS FILE!
+~/.ssh/id_rsa.pub: The associated public key. This can be shared freely without consequence.
+ 
+ Generate an SSH Key Pair with a Larger Number of Bits  (SSH keys are 2048 bits by default. )
+ ssh-keygen -b 4096
+ Overwrite (y/n)?  Y
+ 
+ ssh-keygen -l
+ 
+ 
+ 
+ How To Create a Kubernetes Cluster Using Kubeadm on Ubuntu 18.04
+ https://www.digitalocean.com/community/tutorials/how-to-create-a-kubernetes-cluster-using-kubeadm-on-ubuntu-18-04#prerequisites
